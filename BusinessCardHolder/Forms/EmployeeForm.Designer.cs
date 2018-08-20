@@ -46,6 +46,8 @@
             // 
             // lblFirstNameLabel
             // 
+            this.lblFirstNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFirstNameLabel.AutoSize = true;
             this.lblFirstNameLabel.Location = new System.Drawing.Point(30, 33);
             this.lblFirstNameLabel.Name = "lblFirstNameLabel";
@@ -55,6 +57,8 @@
             // 
             // lblLastNameLabel
             // 
+            this.lblLastNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLastNameLabel.AutoSize = true;
             this.lblLastNameLabel.Location = new System.Drawing.Point(30, 59);
             this.lblLastNameLabel.Name = "lblLastNameLabel";
@@ -64,6 +68,8 @@
             // 
             // lblCompanyNameLabel
             // 
+            this.lblCompanyNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompanyNameLabel.AutoSize = true;
             this.lblCompanyNameLabel.Location = new System.Drawing.Point(30, 86);
             this.lblCompanyNameLabel.Name = "lblCompanyNameLabel";
@@ -73,6 +79,8 @@
             // 
             // lblJobTitleLabel
             // 
+            this.lblJobTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblJobTitleLabel.AutoSize = true;
             this.lblJobTitleLabel.Location = new System.Drawing.Point(30, 113);
             this.lblJobTitleLabel.Name = "lblJobTitleLabel";
@@ -82,6 +90,8 @@
             // 
             // lblPhoneNumberLabel
             // 
+            this.lblPhoneNumberLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPhoneNumberLabel.AutoSize = true;
             this.lblPhoneNumberLabel.Location = new System.Drawing.Point(30, 139);
             this.lblPhoneNumberLabel.Name = "lblPhoneNumberLabel";
@@ -91,6 +101,8 @@
             // 
             // lblMobilePhoneNumberLabel
             // 
+            this.lblMobilePhoneNumberLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMobilePhoneNumberLabel.AutoSize = true;
             this.lblMobilePhoneNumberLabel.Location = new System.Drawing.Point(30, 165);
             this.lblMobilePhoneNumberLabel.Name = "lblMobilePhoneNumberLabel";
@@ -100,6 +112,8 @@
             // 
             // txtMobilePhoneNumber
             // 
+            this.txtMobilePhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMobilePhoneNumber.Location = new System.Drawing.Point(112, 162);
             this.txtMobilePhoneNumber.Name = "txtMobilePhoneNumber";
             this.txtMobilePhoneNumber.Size = new System.Drawing.Size(121, 20);
@@ -107,6 +121,8 @@
             // 
             // txtPhoneNumber
             // 
+            this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhoneNumber.Location = new System.Drawing.Point(112, 136);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(121, 20);
@@ -114,6 +130,8 @@
             // 
             // txtJobTitle
             // 
+            this.txtJobTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtJobTitle.Location = new System.Drawing.Point(112, 110);
             this.txtJobTitle.Name = "txtJobTitle";
             this.txtJobTitle.Size = new System.Drawing.Size(121, 20);
@@ -121,6 +139,8 @@
             // 
             // txtFirstName
             // 
+            this.txtFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFirstName.Location = new System.Drawing.Point(112, 30);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(121, 20);
@@ -128,6 +148,8 @@
             // 
             // txtLastName
             // 
+            this.txtLastName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLastName.Location = new System.Drawing.Point(112, 56);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(121, 20);
@@ -135,6 +157,8 @@
             // 
             // cmbCompanyName
             // 
+            this.cmbCompanyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbCompanyName.FormattingEnabled = true;
             this.cmbCompanyName.Location = new System.Drawing.Point(112, 83);
             this.cmbCompanyName.Name = "cmbCompanyName";
@@ -143,6 +167,7 @@
             // 
             // btnCancelButton
             // 
+            this.btnCancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelButton.Location = new System.Drawing.Point(12, 231);
             this.btnCancelButton.Name = "btnCancelButton";
             this.btnCancelButton.Size = new System.Drawing.Size(75, 23);
@@ -152,6 +177,7 @@
             // 
             // btnSaveButton
             // 
+            this.btnSaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveButton.Location = new System.Drawing.Point(192, 231);
             this.btnSaveButton.Name = "btnSaveButton";
             this.btnSaveButton.Size = new System.Drawing.Size(75, 23);

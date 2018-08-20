@@ -28,30 +28,225 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblSearchLabel = new System.Windows.Forms.Label();
+            this.txtSearchJobTitle = new System.Windows.Forms.TextBox();
+            this.txtSearchFirstName = new System.Windows.Forms.TextBox();
+            this.txtSearchPhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtSearchLastName = new System.Windows.Forms.TextBox();
+            this.btnSearchButton = new System.Windows.Forms.Button();
+            this.txtSearchMobilePhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtSearchCompanyName = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAddButton = new System.Windows.Forms.Button();
+            this.btnDeleteButton = new System.Windows.Forms.Button();
+            this.btnEditButton = new System.Windows.Forms.Button();
+            this.btnBackButton = new System.Windows.Forms.Button();
             this.clmFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmJobTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMobilePhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBackButton = new System.Windows.Forms.Button();
-            this.btnDeleteButton = new System.Windows.Forms.Button();
-            this.btnEditButton = new System.Windows.Forms.Button();
-            this.btnAddButton = new System.Windows.Forms.Button();
-            this.btnSearchButton = new System.Windows.Forms.Button();
-            this.txtSearchPhoneNumber = new System.Windows.Forms.TextBox();
-            this.txtSearchMobilePhoneNumber = new System.Windows.Forms.TextBox();
-            this.txtSearchJobTitle = new System.Windows.Forms.TextBox();
-            this.txtSearchFirstName = new System.Windows.Forms.TextBox();
-            this.txtSearchCompanyName = new System.Windows.Forms.TextBox();
-            this.txtSearchLastName = new System.Windows.Forms.TextBox();
-            this.lblSearchLabel = new System.Windows.Forms.Label();
+            this.panel6.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.btnBackButton);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(3, 455);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(753, 34);
+            this.panel6.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnSearchButton);
+            this.panel4.Controls.Add(this.txtSearchMobilePhoneNumber);
+            this.panel4.Controls.Add(this.txtSearchCompanyName);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(528, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(222, 138);
+            this.panel4.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.txtSearchPhoneNumber);
+            this.panel3.Controls.Add(this.txtSearchLastName);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(303, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(219, 138);
+            this.panel3.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txtSearchJobTitle);
+            this.panel2.Controls.Add(this.txtSearchFirstName);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(78, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(219, 138);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblSearchLabel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(69, 138);
+            this.panel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.Controls.Add(this.panel4, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel3, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(753, 144);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(759, 492);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.dataGridView1);
+            this.panel5.Controls.Add(this.btnAddButton);
+            this.panel5.Controls.Add(this.btnDeleteButton);
+            this.panel5.Controls.Add(this.btnEditButton);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 153);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(753, 296);
+            this.panel5.TabIndex = 1;
+            // 
+            // lblSearchLabel
+            // 
+            this.lblSearchLabel.AutoSize = true;
+            this.lblSearchLabel.Location = new System.Drawing.Point(6, 16);
+            this.lblSearchLabel.Name = "lblSearchLabel";
+            this.lblSearchLabel.Size = new System.Drawing.Size(42, 13);
+            this.lblSearchLabel.TabIndex = 55;
+            this.lblSearchLabel.Text = "Szukaj:";
+            // 
+            // txtSearchJobTitle
+            // 
+            this.txtSearchJobTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchJobTitle.Location = new System.Drawing.Point(3, 39);
+            this.txtSearchJobTitle.Name = "txtSearchJobTitle";
+            this.txtSearchJobTitle.Size = new System.Drawing.Size(200, 20);
+            this.txtSearchJobTitle.TabIndex = 60;
+            this.txtSearchJobTitle.Text = "Stanowisko";
+            // 
+            // txtSearchFirstName
+            // 
+            this.txtSearchFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchFirstName.Location = new System.Drawing.Point(3, 13);
+            this.txtSearchFirstName.Name = "txtSearchFirstName";
+            this.txtSearchFirstName.Size = new System.Drawing.Size(200, 20);
+            this.txtSearchFirstName.TabIndex = 59;
+            this.txtSearchFirstName.Text = "Imię";
+            // 
+            // txtSearchPhoneNumber
+            // 
+            this.txtSearchPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchPhoneNumber.Location = new System.Drawing.Point(3, 39);
+            this.txtSearchPhoneNumber.Name = "txtSearchPhoneNumber";
+            this.txtSearchPhoneNumber.Size = new System.Drawing.Size(200, 20);
+            this.txtSearchPhoneNumber.TabIndex = 62;
+            this.txtSearchPhoneNumber.Text = "Nr Telefonu";
+            // 
+            // txtSearchLastName
+            // 
+            this.txtSearchLastName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchLastName.Location = new System.Drawing.Point(3, 13);
+            this.txtSearchLastName.Name = "txtSearchLastName";
+            this.txtSearchLastName.Size = new System.Drawing.Size(200, 20);
+            this.txtSearchLastName.TabIndex = 61;
+            this.txtSearchLastName.Text = "Nazwisko";
+            // 
+            // btnSearchButton
+            // 
+            this.btnSearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchButton.Location = new System.Drawing.Point(128, 65);
+            this.btnSearchButton.Name = "btnSearchButton";
+            this.btnSearchButton.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchButton.TabIndex = 64;
+            this.btnSearchButton.Text = "Szukaj";
+            this.btnSearchButton.UseVisualStyleBackColor = true;
+            // 
+            // txtSearchMobilePhoneNumber
+            // 
+            this.txtSearchMobilePhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchMobilePhoneNumber.Location = new System.Drawing.Point(3, 39);
+            this.txtSearchMobilePhoneNumber.Name = "txtSearchMobilePhoneNumber";
+            this.txtSearchMobilePhoneNumber.Size = new System.Drawing.Size(200, 20);
+            this.txtSearchMobilePhoneNumber.TabIndex = 63;
+            this.txtSearchMobilePhoneNumber.Text = "Nr Tel. Komórkowego";
+            // 
+            // txtSearchCompanyName
+            // 
+            this.txtSearchCompanyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchCompanyName.Location = new System.Drawing.Point(3, 13);
+            this.txtSearchCompanyName.Name = "txtSearchCompanyName";
+            this.txtSearchCompanyName.Size = new System.Drawing.Size(200, 20);
+            this.txtSearchCompanyName.TabIndex = 62;
+            this.txtSearchCompanyName.Text = "Firma";
+            // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmFirstName,
@@ -60,195 +255,147 @@
             this.clmJobTitle,
             this.clmPhoneNumber,
             this.clmMobilePhoneNumber});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 142);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(735, 229);
-            this.dataGridView1.TabIndex = 40;
+            this.dataGridView1.TabIndex = 57;
             // 
-            // clmFirstName
+            // btnAddButton
             // 
-            this.clmFirstName.HeaderText = "Imię";
-            this.clmFirstName.Name = "clmFirstName";
-            // 
-            // clmLastName
-            // 
-            this.clmLastName.HeaderText = "Nazwisko";
-            this.clmLastName.Name = "clmLastName";
-            this.clmLastName.Width = 130;
-            // 
-            // clmCompanyName
-            // 
-            this.clmCompanyName.HeaderText = "Firma";
-            this.clmCompanyName.Name = "clmCompanyName";
-            this.clmCompanyName.Width = 120;
-            // 
-            // clmJobTitle
-            // 
-            this.clmJobTitle.HeaderText = "Stanowisko";
-            this.clmJobTitle.Name = "clmJobTitle";
-            this.clmJobTitle.Width = 180;
-            // 
-            // clmPhoneNumber
-            // 
-            this.clmPhoneNumber.HeaderText = "Nr Telefonu";
-            this.clmPhoneNumber.Name = "clmPhoneNumber";
-            this.clmPhoneNumber.Width = 80;
-            // 
-            // clmMobilePhoneNumber
-            // 
-            this.clmMobilePhoneNumber.HeaderText = "Nr Telefonu Komórkowego";
-            this.clmMobilePhoneNumber.Name = "clmMobilePhoneNumber";
-            this.clmMobilePhoneNumber.Width = 80;
-            // 
-            // btnBackButton
-            // 
-            this.btnBackButton.Location = new System.Drawing.Point(12, 457);
-            this.btnBackButton.Name = "btnBackButton";
-            this.btnBackButton.Size = new System.Drawing.Size(75, 23);
-            this.btnBackButton.TabIndex = 39;
-            this.btnBackButton.Text = "Wróć";
-            this.btnBackButton.UseVisualStyleBackColor = true;
+            this.btnAddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddButton.Location = new System.Drawing.Point(11, 238);
+            this.btnAddButton.Name = "btnAddButton";
+            this.btnAddButton.Size = new System.Drawing.Size(75, 23);
+            this.btnAddButton.TabIndex = 54;
+            this.btnAddButton.Text = "Dodaj";
+            this.btnAddButton.UseVisualStyleBackColor = true;
             // 
             // btnDeleteButton
             // 
-            this.btnDeleteButton.Location = new System.Drawing.Point(173, 377);
+            this.btnDeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDeleteButton.Location = new System.Drawing.Point(173, 238);
             this.btnDeleteButton.Name = "btnDeleteButton";
             this.btnDeleteButton.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteButton.TabIndex = 38;
+            this.btnDeleteButton.TabIndex = 56;
             this.btnDeleteButton.Text = "Usuń";
             this.btnDeleteButton.UseVisualStyleBackColor = true;
             // 
             // btnEditButton
             // 
-            this.btnEditButton.Location = new System.Drawing.Point(92, 377);
+            this.btnEditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEditButton.Location = new System.Drawing.Point(92, 238);
             this.btnEditButton.Name = "btnEditButton";
             this.btnEditButton.Size = new System.Drawing.Size(75, 23);
-            this.btnEditButton.TabIndex = 37;
+            this.btnEditButton.TabIndex = 55;
             this.btnEditButton.Text = "Edytuj";
             this.btnEditButton.UseVisualStyleBackColor = true;
             // 
-            // btnAddButton
+            // btnBackButton
             // 
-            this.btnAddButton.Location = new System.Drawing.Point(11, 377);
-            this.btnAddButton.Name = "btnAddButton";
-            this.btnAddButton.Size = new System.Drawing.Size(75, 23);
-            this.btnAddButton.TabIndex = 36;
-            this.btnAddButton.Text = "Dodaj";
-            this.btnAddButton.UseVisualStyleBackColor = true;
+            this.btnBackButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBackButton.Location = new System.Drawing.Point(12, 8);
+            this.btnBackButton.Name = "btnBackButton";
+            this.btnBackButton.Size = new System.Drawing.Size(75, 23);
+            this.btnBackButton.TabIndex = 53;
+            this.btnBackButton.Text = "Wróć";
+            this.btnBackButton.UseVisualStyleBackColor = true;
             // 
-            // btnSearchButton
+            // clmFirstName
             // 
-            this.btnSearchButton.Location = new System.Drawing.Point(616, 82);
-            this.btnSearchButton.Name = "btnSearchButton";
-            this.btnSearchButton.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchButton.TabIndex = 48;
-            this.btnSearchButton.Text = "Szukaj";
-            this.btnSearchButton.UseVisualStyleBackColor = true;
+            this.clmFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmFirstName.HeaderText = "Imię";
+            this.clmFirstName.MinimumWidth = 100;
+            this.clmFirstName.Name = "clmFirstName";
             // 
-            // txtSearchPhoneNumber
+            // clmLastName
             // 
-            this.txtSearchPhoneNumber.Location = new System.Drawing.Point(329, 56);
-            this.txtSearchPhoneNumber.Name = "txtSearchPhoneNumber";
-            this.txtSearchPhoneNumber.Size = new System.Drawing.Size(150, 20);
-            this.txtSearchPhoneNumber.TabIndex = 47;
-            this.txtSearchPhoneNumber.Text = "Nr Telefonu";
+            this.clmLastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmLastName.HeaderText = "Nazwisko";
+            this.clmLastName.MinimumWidth = 130;
+            this.clmLastName.Name = "clmLastName";
             // 
-            // txtSearchMobilePhoneNumber
+            // clmCompanyName
             // 
-            this.txtSearchMobilePhoneNumber.Location = new System.Drawing.Point(541, 56);
-            this.txtSearchMobilePhoneNumber.Name = "txtSearchMobilePhoneNumber";
-            this.txtSearchMobilePhoneNumber.Size = new System.Drawing.Size(150, 20);
-            this.txtSearchMobilePhoneNumber.TabIndex = 46;
-            this.txtSearchMobilePhoneNumber.Text = "Nr Tel. Komórkowego";
+            this.clmCompanyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmCompanyName.HeaderText = "Firma";
+            this.clmCompanyName.MinimumWidth = 120;
+            this.clmCompanyName.Name = "clmCompanyName";
             // 
-            // txtSearchJobTitle
+            // clmJobTitle
             // 
-            this.txtSearchJobTitle.Location = new System.Drawing.Point(117, 56);
-            this.txtSearchJobTitle.Name = "txtSearchJobTitle";
-            this.txtSearchJobTitle.Size = new System.Drawing.Size(150, 20);
-            this.txtSearchJobTitle.TabIndex = 45;
-            this.txtSearchJobTitle.Text = "Stanowisko";
+            this.clmJobTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmJobTitle.HeaderText = "Stanowisko";
+            this.clmJobTitle.MinimumWidth = 180;
+            this.clmJobTitle.Name = "clmJobTitle";
             // 
-            // txtSearchFirstName
+            // clmPhoneNumber
             // 
-            this.txtSearchFirstName.Location = new System.Drawing.Point(117, 30);
-            this.txtSearchFirstName.Name = "txtSearchFirstName";
-            this.txtSearchFirstName.Size = new System.Drawing.Size(150, 20);
-            this.txtSearchFirstName.TabIndex = 44;
-            this.txtSearchFirstName.Text = "Imię";
+            this.clmPhoneNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmPhoneNumber.HeaderText = "Nr Telefonu";
+            this.clmPhoneNumber.MinimumWidth = 80;
+            this.clmPhoneNumber.Name = "clmPhoneNumber";
             // 
-            // txtSearchCompanyName
+            // clmMobilePhoneNumber
             // 
-            this.txtSearchCompanyName.Location = new System.Drawing.Point(541, 30);
-            this.txtSearchCompanyName.Name = "txtSearchCompanyName";
-            this.txtSearchCompanyName.Size = new System.Drawing.Size(150, 20);
-            this.txtSearchCompanyName.TabIndex = 43;
-            this.txtSearchCompanyName.Text = "Firma";
-            // 
-            // txtSearchLastName
-            // 
-            this.txtSearchLastName.Location = new System.Drawing.Point(329, 30);
-            this.txtSearchLastName.Name = "txtSearchLastName";
-            this.txtSearchLastName.Size = new System.Drawing.Size(150, 20);
-            this.txtSearchLastName.TabIndex = 42;
-            this.txtSearchLastName.Text = "Nazwisko";
-            // 
-            // lblSearchLabel
-            // 
-            this.lblSearchLabel.AutoSize = true;
-            this.lblSearchLabel.Location = new System.Drawing.Point(9, 33);
-            this.lblSearchLabel.Name = "lblSearchLabel";
-            this.lblSearchLabel.Size = new System.Drawing.Size(42, 13);
-            this.lblSearchLabel.TabIndex = 41;
-            this.lblSearchLabel.Text = "Szukaj:";
+            this.clmMobilePhoneNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmMobilePhoneNumber.HeaderText = "Nr Telefonu Komórkowego";
+            this.clmMobilePhoneNumber.MinimumWidth = 80;
+            this.clmMobilePhoneNumber.Name = "clmMobilePhoneNumber";
             // 
             // EmployeesListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 492);
-            this.Controls.Add(this.btnSearchButton);
-            this.Controls.Add(this.txtSearchPhoneNumber);
-            this.Controls.Add(this.txtSearchMobilePhoneNumber);
-            this.Controls.Add(this.txtSearchJobTitle);
-            this.Controls.Add(this.txtSearchFirstName);
-            this.Controls.Add(this.txtSearchCompanyName);
-            this.Controls.Add(this.txtSearchLastName);
-            this.Controls.Add(this.lblSearchLabel);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnBackButton);
-            this.Controls.Add(this.btnDeleteButton);
-            this.Controls.Add(this.btnEditButton);
-            this.Controls.Add(this.btnAddButton);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(775, 531);
             this.Name = "EmployeesListForm";
             this.Text = "Lista osób";
+            this.panel6.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label lblSearchLabel;
+        private System.Windows.Forms.TextBox txtSearchJobTitle;
+        private System.Windows.Forms.TextBox txtSearchFirstName;
+        private System.Windows.Forms.TextBox txtSearchPhoneNumber;
+        private System.Windows.Forms.TextBox txtSearchLastName;
+        private System.Windows.Forms.Button btnSearchButton;
+        private System.Windows.Forms.TextBox txtSearchMobilePhoneNumber;
+        private System.Windows.Forms.TextBox txtSearchCompanyName;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnAddButton;
+        private System.Windows.Forms.Button btnDeleteButton;
+        private System.Windows.Forms.Button btnEditButton;
+        private System.Windows.Forms.Button btnBackButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmFirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmLastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCompanyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmJobTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPhoneNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMobilePhoneNumber;
-        private System.Windows.Forms.Button btnBackButton;
-        private System.Windows.Forms.Button btnDeleteButton;
-        private System.Windows.Forms.Button btnEditButton;
-        private System.Windows.Forms.Button btnAddButton;
-        private System.Windows.Forms.Button btnSearchButton;
-        private System.Windows.Forms.TextBox txtSearchPhoneNumber;
-        private System.Windows.Forms.TextBox txtSearchMobilePhoneNumber;
-        private System.Windows.Forms.TextBox txtSearchJobTitle;
-        private System.Windows.Forms.TextBox txtSearchFirstName;
-        private System.Windows.Forms.TextBox txtSearchCompanyName;
-        private System.Windows.Forms.TextBox txtSearchLastName;
-        private System.Windows.Forms.Label lblSearchLabel;
     }
 }
