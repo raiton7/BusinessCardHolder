@@ -55,7 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase\BusinessCardHolderContext.cs" />
+    <Compile Include="Models\Company.cs" />
     <Compile Include="DataBase\CompanyRepository.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="DataBase\EmployeeRepository.cs" />
     <Compile Include="Forms\BusinessCardHolderForm.cs">
       <SubType>Form</SubType>
@@ -87,8 +89,6 @@
     <Compile Include="Forms\EmployeesListForm.Designer.cs">
       <DependentUpon>EmployeesListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\CompanyModel.cs" />
-    <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\BusinessCardHolderForm.resx">

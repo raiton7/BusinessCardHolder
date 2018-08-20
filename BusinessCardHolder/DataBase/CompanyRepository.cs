@@ -1,5 +1,4 @@
-﻿using BusinessCardHolder.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -12,45 +11,48 @@ namespace BusinessCardHolder.DataBase
     {
         private BusinessCardHolderContext businessCardHolderContext;
 
-        CompanyRepository(BusinessCardHolderContext businessCardHolderContext)
+        CompanyRepository()
         {
-            this.businessCardHolderContext = businessCardHolderContext;
+            businessCardHolderContext = new BusinessCardHolderContext();
         }
 
-        public void Add(CompanyModel companyModel)
+        public void Add(Company company)
         {
-            businessCardHolderContext.Companies.Add(companyModel);
+            businessCardHolderContext.Companies.Add(company);
+            businessCardHolderContext.SaveChanges();
         }
 
         public void DeleteById(int id)
         {
-            CompanyModel companyModel = businessCardHolderContext.Companies.Find(id);
-            businessCardHolderContext.Companies.Remove(companyModel);
+            Company company = businessCardHolderContext.Companies.Find(id);
+            businessCardHolderContext.Companies.Remove(company);
+            businessCardHolderContext.SaveChanges();
         }
 
-        public void Update(CompanyModel companyModel)
+        public void Update(Company company)
         {
-            // cMU - companyModelUpdate
-            CompanyModel companyModelUpdate = businessCardHolderContext.Companies.SingleOrDefault(cMU => cMU.Id == companyModel.Id);
-            if (companyModelUpdate != null)
+            // cMU - CompanyUpdate
+            Company companyUpdate = businessCardHolderContext.Companies.SingleOrDefault(cMU => cMU.Id == company.Id);
+            if (companyUpdate != null)
             {
-                companyModelUpdate.Name = companyModel.Name;
-                companyModelUpdate.Nip = companyModel.Nip;
-                companyModelUpdate.Address = companyModel.Address;
-                companyModelUpdate.City = companyModel.City;
-                companyModelUpdate.PostCode = companyModel.PostCode;
-                companyModelUpdate.PhoneNumber = companyModel.PhoneNumber;
-                companyModelUpdate.Notes = companyModel.Notes;
+                companyUpdate.Name = company.Name;
+                companyUpdate.Nip = company.Nip;
+                companyUpdate.Address = company.Address;
+                companyUpdate.City = company.City;
+                companyUpdate.PostCode = company.PostCode;
+                companyUpdate.PhoneNumber = company.PhoneNumber;
+                companyUpdate.Notes = company.Notes;
             }
+            businessCardHolderContext.SaveChanges();
         }
 
-        public CompanyModel FindById(int id)
+        public Company FindById(int id)
         {
-            CompanyModel companyModel = businessCardHolderContext.Companies.Find(id);
-            return companyModel;
+            Company company = businessCardHolderContext.Companies.Find(id);
+            return company;
         }
 
-        public IEnumerable<CompanyModel> FindAll()
+        public IEnumerable<Company> FindAll()
         {
             return businessCardHolderContext.Companies.ToList();
         }

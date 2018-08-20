@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using BusinessCardHolder.Models;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,44 +10,47 @@ namespace BusinessCardHolder.DataBase
     {
         private BusinessCardHolderContext businessCardHolderContext;
 
-        EmployeeRepository(BusinessCardHolderContext businessCardHolderContext)
+        EmployeeRepository()
         {
-            this.businessCardHolderContext = businessCardHolderContext;
+            businessCardHolderContext = new BusinessCardHolderContext();
         }
         
-        public void Add(EmployeeModel employeeModel)
+        public void Add(Employee employee)
         {
-            businessCardHolderContext.Employees.Add(employeeModel);
+            businessCardHolderContext.Employees.Add(employee);
+            businessCardHolderContext.SaveChanges();
         }
 
         public void DeleteById(int id)
         {
-            EmployeeModel employeeModel = businessCardHolderContext.Employees.Find(id);
-            businessCardHolderContext.Employees.Remove(employeeModel);
+            Employee employee = businessCardHolderContext.Employees.Find(id);
+            businessCardHolderContext.Employees.Remove(employee);
+            businessCardHolderContext.SaveChanges();
         }
 
-        public void Update(EmployeeModel employeeModel)
+        public void Update(Employee employee)
         {
-            // cMU - EmployeeModelUpdate
-            EmployeeModel employeeModelUpdate = businessCardHolderContext.Employees.SingleOrDefault(cMU => cMU.Id == employeeModel.Id);
-            if (employeeModelUpdate != null)
+            // cMU - EmployeeUpdate
+            Employee employeeUpdate = businessCardHolderContext.Employees.SingleOrDefault(cMU => cMU.Id == employee.Id);
+            if (employeeUpdate != null)
             {
-                employeeModelUpdate.CompanyId = employeeModel.CompanyId;
-                employeeModelUpdate.FirstName = employeeModel.FirstName;
-                employeeModelUpdate.LastName = employeeModel.LastName;
-                employeeModelUpdate.JobTitle = employeeModel.JobTitle;
-                employeeModelUpdate.PhoneNumber = employeeModel.PhoneNumber;
-                employeeModelUpdate.MobilePhoneNumber = employeeModel.MobilePhoneNumber;
+                employeeUpdate.CompanyId = employee.CompanyId;
+                employeeUpdate.FirstName = employee.FirstName;
+                employeeUpdate.LastName = employee.LastName;
+                employeeUpdate.JobTitle = employee.JobTitle;
+                employeeUpdate.PhoneNumber = employee.PhoneNumber;
+                employeeUpdate.MobilePhoneNumber = employee.MobilePhoneNumber;
             }
+            businessCardHolderContext.SaveChanges();
         }
 
-        public EmployeeModel FindById(int id)
+        public Employee FindById(int id)
         {
-            EmployeeModel employeeModel = businessCardHolderContext.Employees.Find(id);
-            return employeeModel;
+            Employee employee = businessCardHolderContext.Employees.Find(id);
+            return employee;
         }
 
-        public IEnumerable<EmployeeModel> FindAll()
+        public IEnumerable<Employee> FindAll()
         {
             return businessCardHolderContext.Employees.ToList();
         }

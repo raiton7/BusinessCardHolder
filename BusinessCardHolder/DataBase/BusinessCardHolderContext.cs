@@ -1,17 +1,26 @@
 namespace BusinessCardHolder.DataBase
 {
-    using global::BusinessCardHolder.Models;
     using System;
     using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public class BusinessCardHolderContext : DbContext
+    public partial class BusinessCardHolderContext : DbContext
     {
         public BusinessCardHolderContext()
             : base("name=BusinessCardHolderContext")
         {
         }
-        public DbSet<EmployeeModel> Employees { get; set; }
-        public DbSet<CompanyModel> Companies { get; set; }
+
+        public virtual DbSet<Company> Companies { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Company>()
+                .HasMany(e => e.Employees)
+                .WithRequired(e => e.Company)
+                .WillCascadeOnDelete(false);
+        }
     }
 }
