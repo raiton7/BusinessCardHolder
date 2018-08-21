@@ -1,4 +1,4 @@
-namespace BusinessCardHolder.DataBase
+namespace BusinessCardHolder.Models
 {
     using System;
     using System.Collections.Generic;
@@ -33,5 +33,17 @@ namespace BusinessCardHolder.DataBase
         public string MobilePhoneNumber { get; set; }
 
         public virtual Company Company { get; set; }
+
+        [NotMapped]
+        public string CompanyName
+        {
+            get
+            {
+                if (Company != null)
+                    return Company.Name;
+                else
+                    return string.Empty;
+            }
+        }
     }
 }

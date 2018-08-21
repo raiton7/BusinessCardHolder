@@ -1,4 +1,4 @@
-namespace BusinessCardHolder.DataBase
+namespace BusinessCardHolder.Models
 {
     using System;
     using System.Collections.Generic;
@@ -41,7 +41,7 @@ namespace BusinessCardHolder.DataBase
         public string PhoneNumber { get; set; }
 
         [Column(TypeName = "ntext")]
-        [Required]
+        [Required(AllowEmptyStrings = true)]
         public string Notes { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

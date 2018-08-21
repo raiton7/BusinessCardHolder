@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using BusinessCardHolder.Models;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BusinessCardHolder.DataBase
 {
-    class EmployeeRepository
+    public class EmployeeRepository
     {
         private BusinessCardHolderContext businessCardHolderContext;
 
-        EmployeeRepository()
+        public EmployeeRepository()
         {
             businessCardHolderContext = new BusinessCardHolderContext();
         }
@@ -30,8 +31,8 @@ namespace BusinessCardHolder.DataBase
 
         public void Update(Employee employee)
         {
-            // cMU - EmployeeUpdate
-            Employee employeeUpdate = businessCardHolderContext.Employees.SingleOrDefault(cMU => cMU.Id == employee.Id);
+            // eU - employeeUpdate
+            Employee employeeUpdate = businessCardHolderContext.Employees.SingleOrDefault(eU => eU.Id == employee.Id);
             if (employeeUpdate != null)
             {
                 employeeUpdate.CompanyId = employee.CompanyId;

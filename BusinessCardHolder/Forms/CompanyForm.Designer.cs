@@ -91,6 +91,7 @@
             this.btnSaveButton.TabIndex = 59;
             this.btnSaveButton.Text = "Zapisz";
             this.btnSaveButton.UseVisualStyleBackColor = true;
+            this.btnSaveButton.Click += new System.EventHandler(this.btnSaveButton_Click);
             // 
             // btnCancelButton
             // 

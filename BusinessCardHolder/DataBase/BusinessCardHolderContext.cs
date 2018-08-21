@@ -2,6 +2,7 @@ namespace BusinessCardHolder.DataBase
 {
     using System;
     using System.Data.Entity;
+    using BusinessCardHolder.Models;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
