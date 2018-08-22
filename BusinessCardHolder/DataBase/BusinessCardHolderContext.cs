@@ -21,7 +21,7 @@ namespace BusinessCardHolder.DataBase
             modelBuilder.Entity<Company>()
                 .HasMany(e => e.Employees)
                 .WithRequired(e => e.Company)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
         }
     }
 }

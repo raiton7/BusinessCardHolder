@@ -37,14 +37,6 @@
             this.btnEditButton = new System.Windows.Forms.Button();
             this.btnAddButton = new System.Windows.Forms.Button();
             this.grdCompanies = new System.Windows.Forms.DataGridView();
-            this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmPostCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSearchButton = new System.Windows.Forms.Button();
@@ -58,6 +50,14 @@
             this.txtSearchCompanyName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSearchLabel = new System.Windows.Forms.Label();
+            this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPostCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsCompanies = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -175,78 +175,6 @@
             this.grdCompanies.Size = new System.Drawing.Size(863, 223);
             this.grdCompanies.TabIndex = 25;
             // 
-            // clmId
-            // 
-            this.clmId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmId.DataPropertyName = "Id";
-            this.clmId.HeaderText = "ID";
-            this.clmId.MinimumWidth = 35;
-            this.clmId.Name = "clmId";
-            this.clmId.ReadOnly = true;
-            // 
-            // clmCompanyName
-            // 
-            this.clmCompanyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmCompanyName.DataPropertyName = "Name";
-            this.clmCompanyName.HeaderText = "Nazwa";
-            this.clmCompanyName.MinimumWidth = 120;
-            this.clmCompanyName.Name = "clmCompanyName";
-            this.clmCompanyName.ReadOnly = true;
-            // 
-            // clmNip
-            // 
-            this.clmNip.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmNip.DataPropertyName = "Nip";
-            this.clmNip.HeaderText = "NIP";
-            this.clmNip.MinimumWidth = 80;
-            this.clmNip.Name = "clmNip";
-            this.clmNip.ReadOnly = true;
-            // 
-            // clmAddress
-            // 
-            this.clmAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmAddress.DataPropertyName = "Address";
-            this.clmAddress.HeaderText = "Adres";
-            this.clmAddress.MinimumWidth = 175;
-            this.clmAddress.Name = "clmAddress";
-            this.clmAddress.ReadOnly = true;
-            // 
-            // clmCity
-            // 
-            this.clmCity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmCity.DataPropertyName = "City";
-            this.clmCity.HeaderText = "Miasto";
-            this.clmCity.MinimumWidth = 100;
-            this.clmCity.Name = "clmCity";
-            this.clmCity.ReadOnly = true;
-            // 
-            // clmPostCode
-            // 
-            this.clmPostCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmPostCode.DataPropertyName = "PostCode";
-            this.clmPostCode.HeaderText = "Kod Pocztowy";
-            this.clmPostCode.MinimumWidth = 60;
-            this.clmPostCode.Name = "clmPostCode";
-            this.clmPostCode.ReadOnly = true;
-            // 
-            // clmPhoneNumber
-            // 
-            this.clmPhoneNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmPhoneNumber.DataPropertyName = "PhoneNumber";
-            this.clmPhoneNumber.HeaderText = "Telefon";
-            this.clmPhoneNumber.MinimumWidth = 100;
-            this.clmPhoneNumber.Name = "clmPhoneNumber";
-            this.clmPhoneNumber.ReadOnly = true;
-            // 
-            // clmNotes
-            // 
-            this.clmNotes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmNotes.DataPropertyName = "Notes";
-            this.clmNotes.HeaderText = "Uwagi";
-            this.clmNotes.MinimumWidth = 150;
-            this.clmNotes.Name = "clmNotes";
-            this.clmNotes.ReadOnly = true;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 4;
@@ -286,6 +214,7 @@
             this.btnSearchButton.TabIndex = 6;
             this.btnSearchButton.Text = "Szukaj";
             this.btnSearchButton.UseVisualStyleBackColor = true;
+            this.btnSearchButton.Click += new System.EventHandler(this.btnSearchButton_Click);
             // 
             // txtSearchPhoneNumber
             // 
@@ -384,6 +313,78 @@
             this.lblSearchLabel.Size = new System.Drawing.Size(42, 13);
             this.lblSearchLabel.TabIndex = 15;
             this.lblSearchLabel.Text = "Szukaj:";
+            // 
+            // clmId
+            // 
+            this.clmId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmId.DataPropertyName = "Id";
+            this.clmId.HeaderText = "ID";
+            this.clmId.MinimumWidth = 35;
+            this.clmId.Name = "clmId";
+            this.clmId.ReadOnly = true;
+            // 
+            // clmCompanyName
+            // 
+            this.clmCompanyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmCompanyName.DataPropertyName = "Name";
+            this.clmCompanyName.HeaderText = "Nazwa";
+            this.clmCompanyName.MinimumWidth = 80;
+            this.clmCompanyName.Name = "clmCompanyName";
+            this.clmCompanyName.ReadOnly = true;
+            // 
+            // clmNip
+            // 
+            this.clmNip.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmNip.DataPropertyName = "Nip";
+            this.clmNip.HeaderText = "NIP";
+            this.clmNip.MinimumWidth = 60;
+            this.clmNip.Name = "clmNip";
+            this.clmNip.ReadOnly = true;
+            // 
+            // clmAddress
+            // 
+            this.clmAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmAddress.DataPropertyName = "Address";
+            this.clmAddress.HeaderText = "Adres";
+            this.clmAddress.MinimumWidth = 150;
+            this.clmAddress.Name = "clmAddress";
+            this.clmAddress.ReadOnly = true;
+            // 
+            // clmCity
+            // 
+            this.clmCity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmCity.DataPropertyName = "City";
+            this.clmCity.HeaderText = "Miasto";
+            this.clmCity.MinimumWidth = 80;
+            this.clmCity.Name = "clmCity";
+            this.clmCity.ReadOnly = true;
+            // 
+            // clmPostCode
+            // 
+            this.clmPostCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmPostCode.DataPropertyName = "PostCode";
+            this.clmPostCode.HeaderText = "Kod Pocztowy";
+            this.clmPostCode.MinimumWidth = 50;
+            this.clmPostCode.Name = "clmPostCode";
+            this.clmPostCode.ReadOnly = true;
+            // 
+            // clmPhoneNumber
+            // 
+            this.clmPhoneNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmPhoneNumber.DataPropertyName = "PhoneNumber";
+            this.clmPhoneNumber.HeaderText = "Telefon";
+            this.clmPhoneNumber.MinimumWidth = 80;
+            this.clmPhoneNumber.Name = "clmPhoneNumber";
+            this.clmPhoneNumber.ReadOnly = true;
+            // 
+            // clmNotes
+            // 
+            this.clmNotes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmNotes.DataPropertyName = "Notes";
+            this.clmNotes.HeaderText = "Uwagi";
+            this.clmNotes.MinimumWidth = 120;
+            this.clmNotes.Name = "clmNotes";
+            this.clmNotes.ReadOnly = true;
             // 
             // bsCompanies
             // 

@@ -78,5 +78,12 @@ namespace BusinessCardHolder.Forms
             throw new NotImplementedException();
         }
 
+        private void btnSearchButton_Click(object sender, EventArgs e)
+        {
+            EmployeeRepository employeeRepository = new EmployeeRepository();
+            bsEmployees.DataSource = employeeRepository.Search(txtSearchFirstName.Text, txtSearchLastName.Text, txtSearchCompanyName.Text,
+                                                                txtSearchJobTitle.Text, txtSearchPhoneNumber.Text, txtSearchMobilePhoneNumber.Text);
+            bsEmployees.ResetBindings(false);
+        }
     }
 }

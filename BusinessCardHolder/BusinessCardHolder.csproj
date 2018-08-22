@@ -55,6 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase\BusinessCardHolderContext.cs" />
+    <Compile Include="Migrations\201808221111227_db_mig.cs" />
+    <Compile Include="Migrations\201808221111227_db_mig.Designer.cs">
+      <DependentUpon>201808221111227_db_mig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="DataBase\CompanyRepository.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -105,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeesListForm.resx">
       <DependentUpon>EmployeesListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808221111227_db_mig.resx">
+      <DependentUpon>201808221111227_db_mig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

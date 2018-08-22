@@ -87,5 +87,13 @@ namespace BusinessCardHolder.Forms
         {
             throw new NotImplementedException();
         }
+
+        private void btnSearchButton_Click(object sender, EventArgs e)
+        {
+            CompanyRepository companyRepository = new CompanyRepository();
+            bsCompanies.DataSource = companyRepository.Search(txtSearchCompanyName.Text, txtSearchNip.Text, txtSearchAddress.Text,
+                                                                txtSearchCity.Text, txtSearchPostCode.Text, txtSearchPhoneNumber.Text);
+            bsCompanies.ResetBindings(false);
+        }
     }
 }

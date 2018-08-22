@@ -14,6 +14,7 @@ namespace BusinessCardHolder.Forms
         public EmployeeForm(Employee employee, Company company = null)
         {
             InitializeComponent();
+            cmbCompanyName.DropDownStyle = ComboBoxStyle.DropDownList;
             Employee = employee;
             bsEmployee.DataSource = Employee;
             CompanyRepository companyRepository = new CompanyRepository();

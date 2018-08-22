@@ -109,6 +109,7 @@
             this.btnSearchButton.TabIndex = 64;
             this.btnSearchButton.Text = "Szukaj";
             this.btnSearchButton.UseVisualStyleBackColor = true;
+            this.btnSearchButton.Click += new System.EventHandler(this.btnSearchButton_Click);
             // 
             // txtSearchMobilePhoneNumber
             // 
