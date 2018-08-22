@@ -47,15 +47,15 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.grdEmployees = new System.Windows.Forms.DataGridView();
+            this.btnAddButton = new System.Windows.Forms.Button();
+            this.btnDeleteButton = new System.Windows.Forms.Button();
+            this.btnEditButton = new System.Windows.Forms.Button();
             this.clmFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmJobTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMobilePhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAddButton = new System.Windows.Forms.Button();
-            this.btnDeleteButton = new System.Windows.Forms.Button();
-            this.btnEditButton = new System.Windows.Forms.Button();
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -277,6 +277,39 @@
             this.grdEmployees.Size = new System.Drawing.Size(737, 229);
             this.grdEmployees.TabIndex = 57;
             // 
+            // btnAddButton
+            // 
+            this.btnAddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddButton.Location = new System.Drawing.Point(9, 238);
+            this.btnAddButton.Name = "btnAddButton";
+            this.btnAddButton.Size = new System.Drawing.Size(75, 23);
+            this.btnAddButton.TabIndex = 54;
+            this.btnAddButton.Text = "Dodaj";
+            this.btnAddButton.UseVisualStyleBackColor = true;
+            this.btnAddButton.Click += new System.EventHandler(this.btnAddButton_Click);
+            // 
+            // btnDeleteButton
+            // 
+            this.btnDeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDeleteButton.Location = new System.Drawing.Point(171, 238);
+            this.btnDeleteButton.Name = "btnDeleteButton";
+            this.btnDeleteButton.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteButton.TabIndex = 56;
+            this.btnDeleteButton.Text = "Usuń";
+            this.btnDeleteButton.UseVisualStyleBackColor = true;
+            this.btnDeleteButton.Click += new System.EventHandler(this.btnDeleteButton_Click);
+            // 
+            // btnEditButton
+            // 
+            this.btnEditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEditButton.Location = new System.Drawing.Point(90, 238);
+            this.btnEditButton.Name = "btnEditButton";
+            this.btnEditButton.Size = new System.Drawing.Size(75, 23);
+            this.btnEditButton.TabIndex = 55;
+            this.btnEditButton.Text = "Edytuj";
+            this.btnEditButton.UseVisualStyleBackColor = true;
+            this.btnEditButton.Click += new System.EventHandler(this.btnEditButton_Click);
+            // 
             // clmFirstName
             // 
             this.clmFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -331,37 +364,6 @@
             this.clmMobilePhoneNumber.MinimumWidth = 80;
             this.clmMobilePhoneNumber.Name = "clmMobilePhoneNumber";
             this.clmMobilePhoneNumber.ReadOnly = true;
-            // 
-            // btnAddButton
-            // 
-            this.btnAddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddButton.Location = new System.Drawing.Point(9, 238);
-            this.btnAddButton.Name = "btnAddButton";
-            this.btnAddButton.Size = new System.Drawing.Size(75, 23);
-            this.btnAddButton.TabIndex = 54;
-            this.btnAddButton.Text = "Dodaj";
-            this.btnAddButton.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteButton
-            // 
-            this.btnDeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDeleteButton.Location = new System.Drawing.Point(171, 238);
-            this.btnDeleteButton.Name = "btnDeleteButton";
-            this.btnDeleteButton.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteButton.TabIndex = 56;
-            this.btnDeleteButton.Text = "Usuń";
-            this.btnDeleteButton.UseVisualStyleBackColor = true;
-            this.btnDeleteButton.Click += new System.EventHandler(this.btnDeleteButton_Click);
-            // 
-            // btnEditButton
-            // 
-            this.btnEditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEditButton.Location = new System.Drawing.Point(90, 238);
-            this.btnEditButton.Name = "btnEditButton";
-            this.btnEditButton.Size = new System.Drawing.Size(75, 23);
-            this.btnEditButton.TabIndex = 55;
-            this.btnEditButton.Text = "Edytuj";
-            this.btnEditButton.UseVisualStyleBackColor = true;
             // 
             // bsEmployees
             // 

@@ -42,7 +42,7 @@ namespace BusinessCardHolder.Models
 
         [Column(TypeName = "ntext")]
         [Required(AllowEmptyStrings = true)]
-        public string Notes { get; set; }
+        public string Notes { get; set; } = string.Empty;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee> Employees { get; set; }

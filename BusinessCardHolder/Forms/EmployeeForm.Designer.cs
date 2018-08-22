@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblFirstNameLabel = new System.Windows.Forms.Label();
             this.lblLastNameLabel = new System.Windows.Forms.Label();
             this.lblCompanyNameLabel = new System.Windows.Forms.Label();
@@ -35,13 +36,17 @@
             this.lblPhoneNumberLabel = new System.Windows.Forms.Label();
             this.lblMobilePhoneNumberLabel = new System.Windows.Forms.Label();
             this.txtMobilePhoneNumber = new System.Windows.Forms.TextBox();
+            this.bsEmployee = new System.Windows.Forms.BindingSource(this.components);
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtJobTitle = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.cmbCompanyName = new System.Windows.Forms.ComboBox();
+            this.bsCompanies = new System.Windows.Forms.BindingSource(this.components);
             this.btnCancelButton = new System.Windows.Forms.Button();
             this.btnSaveButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCompanies)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFirstNameLabel
@@ -114,56 +119,72 @@
             // 
             this.txtMobilePhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMobilePhoneNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsEmployee, "MobilePhoneNumber", true));
             this.txtMobilePhoneNumber.Location = new System.Drawing.Point(112, 162);
             this.txtMobilePhoneNumber.Name = "txtMobilePhoneNumber";
             this.txtMobilePhoneNumber.Size = new System.Drawing.Size(121, 20);
-            this.txtMobilePhoneNumber.TabIndex = 6;
+            this.txtMobilePhoneNumber.TabIndex = 5;
+            // 
+            // bsEmployee
+            // 
+            this.bsEmployee.DataSource = typeof(BusinessCardHolder.Models.Employee);
             // 
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPhoneNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsEmployee, "PhoneNumber", true));
             this.txtPhoneNumber.Location = new System.Drawing.Point(112, 136);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(121, 20);
-            this.txtPhoneNumber.TabIndex = 7;
+            this.txtPhoneNumber.TabIndex = 4;
             // 
             // txtJobTitle
             // 
             this.txtJobTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtJobTitle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsEmployee, "JobTitle", true));
             this.txtJobTitle.Location = new System.Drawing.Point(112, 110);
             this.txtJobTitle.Name = "txtJobTitle";
             this.txtJobTitle.Size = new System.Drawing.Size(121, 20);
-            this.txtJobTitle.TabIndex = 8;
+            this.txtJobTitle.TabIndex = 3;
             // 
             // txtFirstName
             // 
             this.txtFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFirstName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsEmployee, "FirstName", true));
             this.txtFirstName.Location = new System.Drawing.Point(112, 30);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(121, 20);
-            this.txtFirstName.TabIndex = 9;
+            this.txtFirstName.TabIndex = 0;
             // 
             // txtLastName
             // 
             this.txtLastName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLastName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsEmployee, "LastName", true));
             this.txtLastName.Location = new System.Drawing.Point(112, 56);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(121, 20);
-            this.txtLastName.TabIndex = 10;
+            this.txtLastName.TabIndex = 1;
             // 
             // cmbCompanyName
             // 
             this.cmbCompanyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCompanyName.DataSource = this.bsCompanies;
+            this.cmbCompanyName.DisplayMember = "Name";
             this.cmbCompanyName.FormattingEnabled = true;
             this.cmbCompanyName.Location = new System.Drawing.Point(112, 83);
             this.cmbCompanyName.Name = "cmbCompanyName";
             this.cmbCompanyName.Size = new System.Drawing.Size(121, 21);
-            this.cmbCompanyName.TabIndex = 11;
+            this.cmbCompanyName.TabIndex = 2;
+            this.cmbCompanyName.ValueMember = "Id";
+            // 
+            // bsCompanies
+            // 
+            this.bsCompanies.DataSource = typeof(BusinessCardHolder.Models.Company);
             // 
             // btnCancelButton
             // 
@@ -171,9 +192,10 @@
             this.btnCancelButton.Location = new System.Drawing.Point(12, 231);
             this.btnCancelButton.Name = "btnCancelButton";
             this.btnCancelButton.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelButton.TabIndex = 12;
+            this.btnCancelButton.TabIndex = 6;
             this.btnCancelButton.Text = "Anuluj";
             this.btnCancelButton.UseVisualStyleBackColor = true;
+            this.btnCancelButton.Click += new System.EventHandler(this.btnCancelButton_Click);
             // 
             // btnSaveButton
             // 
@@ -181,9 +203,10 @@
             this.btnSaveButton.Location = new System.Drawing.Point(192, 231);
             this.btnSaveButton.Name = "btnSaveButton";
             this.btnSaveButton.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveButton.TabIndex = 13;
+            this.btnSaveButton.TabIndex = 7;
             this.btnSaveButton.Text = "Zapisz";
             this.btnSaveButton.UseVisualStyleBackColor = true;
+            this.btnSaveButton.Click += new System.EventHandler(this.btnSaveButton_Click);
             // 
             // EmployeeForm
             // 
@@ -207,6 +230,8 @@
             this.MinimumSize = new System.Drawing.Size(295, 305);
             this.Name = "EmployeeForm";
             this.Text = "Szczegóły osoby";
+            ((System.ComponentModel.ISupportInitialize)(this.bsEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCompanies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +253,7 @@
         private System.Windows.Forms.ComboBox cmbCompanyName;
         private System.Windows.Forms.Button btnCancelButton;
         private System.Windows.Forms.Button btnSaveButton;
+        private System.Windows.Forms.BindingSource bsEmployee;
+        private System.Windows.Forms.BindingSource bsCompanies;
     }
 }

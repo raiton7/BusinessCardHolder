@@ -29,6 +29,45 @@ namespace BusinessCardHolder.Forms
             Close();
         }
 
+        private void btnAddButton_Click(object sender, EventArgs e)
+        {
+            Company company = new Company();
+            CompanyForm frmCompanyForm = new CompanyForm(company);
+            frmCompanyForm.MdiParent = MdiParent;
+            frmCompanyForm.AddButton.Enabled = false;
+            frmCompanyForm.EditButton.Enabled = false;
+            frmCompanyForm.DeleteButton.Enabled = false;
+            frmCompanyForm.Show();
+            frmCompanyForm.Text = "Szczegóły firmy - Dodaj firmę";
+            frmCompanyForm.SaveButton.Click += delegate
+            {
+                company = frmCompanyForm.Company;
+                CompanyRepository companyRepository = new CompanyRepository();
+                companyRepository.Add(company);
+                bsCompanies.DataSource = companyRepository.FindAll();
+                bsCompanies.ResetBindings(false);
+            };
+        }
+
+
+        private void btnEditButton_Click(object sender, EventArgs e)
+        {
+            Company company = new Company();
+            company = (Company)bsCompanies.Current;
+            CompanyForm frmCompanyForm = new CompanyForm(company);
+            frmCompanyForm.MdiParent = MdiParent;
+            frmCompanyForm.Show();
+            frmCompanyForm.Text = "Szczegóły firmy - Edytuj dane firmy";
+            frmCompanyForm.SaveButton.Click += delegate
+            {
+                company = frmCompanyForm.Company;
+                CompanyRepository companyRepository = new CompanyRepository();
+                companyRepository.Update(company);
+                bsCompanies.DataSource = companyRepository.FindAll();
+                bsCompanies.ResetBindings(false);
+            };
+        }
+
         private void btnDeleteButton_Click(object sender, EventArgs e)
         {
             if (bsCompanies.Current is Company)
@@ -44,25 +83,9 @@ namespace BusinessCardHolder.Forms
             }
         }
 
-        private CompanyForm frmCompanyForm;
-        private void btnAddButton_Click(object sender, EventArgs e)
+        private void @delegate(object sender, EventArgs e)
         {
-            if (frmCompanyForm != null)
-            {
-                frmCompanyForm = new CompanyForm();
-                frmCompanyForm.MdiParent = MdiParent;
-                frmCompanyForm.FormClosed += new FormClosedEventHandler(frmCompanyForm_FormClosed);
-                frmCompanyForm.Show();
-            }
-            else
-            {
-                frmCompanyForm.Activate();
-            }
-        }
-
-        private void frmCompanyForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            frmCompanyForm = null;
+            throw new NotImplementedException();
         }
     }
 }

@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnSaveButton = new System.Windows.Forms.Button();
             this.btnCancelButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblEmployeesListLabel = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grdEmployees = new System.Windows.Forms.DataGridView();
             this.clmFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,14 +63,18 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtNip = new System.Windows.Forms.TextBox();
             this.lblCompanyNameLabel = new System.Windows.Forms.Label();
+            this.bsCompany = new System.Windows.Forms.BindingSource(this.components);
+            this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.panel6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdEmployees)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCompany)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // panel6
@@ -88,7 +93,7 @@
             this.btnSaveButton.Location = new System.Drawing.Point(668, 8);
             this.btnSaveButton.Name = "btnSaveButton";
             this.btnSaveButton.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveButton.TabIndex = 59;
+            this.btnSaveButton.TabIndex = 11;
             this.btnSaveButton.Text = "Zapisz";
             this.btnSaveButton.UseVisualStyleBackColor = true;
             this.btnSaveButton.Click += new System.EventHandler(this.btnSaveButton_Click);
@@ -98,9 +103,10 @@
             this.btnCancelButton.Location = new System.Drawing.Point(9, 8);
             this.btnCancelButton.Name = "btnCancelButton";
             this.btnCancelButton.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelButton.TabIndex = 58;
+            this.btnCancelButton.TabIndex = 10;
             this.btnCancelButton.Text = "Anuluj";
             this.btnCancelButton.UseVisualStyleBackColor = true;
+            this.btnCancelButton.Click += new System.EventHandler(this.btnCancelButton_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -122,7 +128,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.lblEmployeesListLabel);
-            this.panel5.Controls.Add(this.dataGridView1);
+            this.panel5.Controls.Add(this.grdEmployees);
             this.panel5.Controls.Add(this.btnDeleteButton);
             this.panel5.Controls.Add(this.btnEditButton);
             this.panel5.Controls.Add(this.btnAddButton);
@@ -141,65 +147,80 @@
             this.lblEmployeesListLabel.TabIndex = 61;
             this.lblEmployeesListLabel.Text = "Lista osób";
             // 
-            // dataGridView1
+            // grdEmployees
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.grdEmployees.AllowUserToAddRows = false;
+            this.grdEmployees.AllowUserToDeleteRows = false;
+            this.grdEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmFirstName,
             this.clmLastName,
             this.clmCompanyName,
             this.clmJobTitle,
             this.clmPhoneNumber,
             this.clmMobilePhoneNumber});
-            this.dataGridView1.Location = new System.Drawing.Point(10, 25);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(733, 229);
-            this.dataGridView1.TabIndex = 60;
+            this.grdEmployees.Location = new System.Drawing.Point(10, 25);
+            this.grdEmployees.Name = "grdEmployees";
+            this.grdEmployees.ReadOnly = true;
+            this.grdEmployees.Size = new System.Drawing.Size(733, 229);
+            this.grdEmployees.TabIndex = 12;
             // 
             // clmFirstName
             // 
             this.clmFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmFirstName.DataPropertyName = "FirstName";
             this.clmFirstName.HeaderText = "Imię";
             this.clmFirstName.MinimumWidth = 100;
             this.clmFirstName.Name = "clmFirstName";
+            this.clmFirstName.ReadOnly = true;
             // 
             // clmLastName
             // 
             this.clmLastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmLastName.DataPropertyName = "LastName";
             this.clmLastName.HeaderText = "Nazwisko";
             this.clmLastName.MinimumWidth = 130;
             this.clmLastName.Name = "clmLastName";
+            this.clmLastName.ReadOnly = true;
             // 
             // clmCompanyName
             // 
             this.clmCompanyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmCompanyName.DataPropertyName = "CompanyName";
             this.clmCompanyName.HeaderText = "Firma";
             this.clmCompanyName.MinimumWidth = 120;
             this.clmCompanyName.Name = "clmCompanyName";
+            this.clmCompanyName.ReadOnly = true;
             // 
             // clmJobTitle
             // 
             this.clmJobTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmJobTitle.DataPropertyName = "JobTitle";
             this.clmJobTitle.HeaderText = "Stanowisko";
             this.clmJobTitle.MinimumWidth = 180;
             this.clmJobTitle.Name = "clmJobTitle";
+            this.clmJobTitle.ReadOnly = true;
             // 
             // clmPhoneNumber
             // 
             this.clmPhoneNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmPhoneNumber.DataPropertyName = "PhoneNumber";
             this.clmPhoneNumber.HeaderText = "Nr Telefonu";
             this.clmPhoneNumber.MinimumWidth = 80;
             this.clmPhoneNumber.Name = "clmPhoneNumber";
+            this.clmPhoneNumber.ReadOnly = true;
             // 
             // clmMobilePhoneNumber
             // 
             this.clmMobilePhoneNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmMobilePhoneNumber.DataPropertyName = "MobilePhoneNumber";
             this.clmMobilePhoneNumber.HeaderText = "Nr Telefonu Komórkowego";
             this.clmMobilePhoneNumber.MinimumWidth = 80;
             this.clmMobilePhoneNumber.Name = "clmMobilePhoneNumber";
+            this.clmMobilePhoneNumber.ReadOnly = true;
             // 
             // btnDeleteButton
             // 
@@ -207,9 +228,10 @@
             this.btnDeleteButton.Location = new System.Drawing.Point(171, 260);
             this.btnDeleteButton.Name = "btnDeleteButton";
             this.btnDeleteButton.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteButton.TabIndex = 59;
+            this.btnDeleteButton.TabIndex = 9;
             this.btnDeleteButton.Text = "Usuń";
             this.btnDeleteButton.UseVisualStyleBackColor = true;
+            this.btnDeleteButton.Click += new System.EventHandler(this.btnDeleteButton_Click);
             // 
             // btnEditButton
             // 
@@ -217,9 +239,10 @@
             this.btnEditButton.Location = new System.Drawing.Point(90, 260);
             this.btnEditButton.Name = "btnEditButton";
             this.btnEditButton.Size = new System.Drawing.Size(75, 23);
-            this.btnEditButton.TabIndex = 58;
+            this.btnEditButton.TabIndex = 8;
             this.btnEditButton.Text = "Edytuj";
             this.btnEditButton.UseVisualStyleBackColor = true;
+            this.btnEditButton.Click += new System.EventHandler(this.btnEditButton_Click);
             // 
             // btnAddButton
             // 
@@ -227,9 +250,10 @@
             this.btnAddButton.Location = new System.Drawing.Point(9, 260);
             this.btnAddButton.Name = "btnAddButton";
             this.btnAddButton.Size = new System.Drawing.Size(75, 23);
-            this.btnAddButton.TabIndex = 57;
+            this.btnAddButton.TabIndex = 7;
             this.btnAddButton.Text = "Dodaj";
             this.btnAddButton.UseVisualStyleBackColor = true;
+            this.btnAddButton.Click += new System.EventHandler(this.btnAddButton_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -263,11 +287,12 @@
             this.txtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNotes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompany, "Notes", true));
             this.txtNotes.Location = new System.Drawing.Point(6, 19);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(179, 49);
-            this.txtNotes.TabIndex = 56;
+            this.txtNotes.TabIndex = 6;
             // 
             // lblNotesLabel
             // 
@@ -321,28 +346,31 @@
             // 
             this.txtCity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompany, "City", true));
             this.txtCity.Location = new System.Drawing.Point(84, 0);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(151, 20);
-            this.txtCity.TabIndex = 56;
+            this.txtCity.TabIndex = 3;
             // 
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPhoneNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompany, "PhoneNumber", true));
             this.txtPhoneNumber.Location = new System.Drawing.Point(84, 52);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(151, 20);
-            this.txtPhoneNumber.TabIndex = 55;
+            this.txtPhoneNumber.TabIndex = 5;
             // 
             // txtPostCode
             // 
             this.txtPostCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPostCode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompany, "PostCode", true));
             this.txtPostCode.Location = new System.Drawing.Point(84, 26);
             this.txtPostCode.Name = "txtPostCode";
             this.txtPostCode.Size = new System.Drawing.Size(151, 20);
-            this.txtPostCode.TabIndex = 54;
+            this.txtPostCode.TabIndex = 4;
             // 
             // lblCityLabel
             // 
@@ -395,28 +423,31 @@
             // 
             this.txtCompanyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCompanyName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompany, "Name", true));
             this.txtCompanyName.Location = new System.Drawing.Point(49, 0);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(151, 20);
-            this.txtCompanyName.TabIndex = 50;
+            this.txtCompanyName.TabIndex = 0;
             // 
             // txtAddress
             // 
             this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompany, "Address", true));
             this.txtAddress.Location = new System.Drawing.Point(49, 52);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(151, 20);
-            this.txtAddress.TabIndex = 49;
+            this.txtAddress.TabIndex = 2;
             // 
             // txtNip
             // 
             this.txtNip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNip.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompany, "Nip", true));
             this.txtNip.Location = new System.Drawing.Point(49, 26);
             this.txtNip.Name = "txtNip";
             this.txtNip.Size = new System.Drawing.Size(151, 20);
-            this.txtNip.TabIndex = 48;
+            this.txtNip.TabIndex = 1;
             // 
             // lblCompanyNameLabel
             // 
@@ -428,6 +459,14 @@
             this.lblCompanyNameLabel.Size = new System.Drawing.Size(40, 13);
             this.lblCompanyNameLabel.TabIndex = 47;
             this.lblCompanyNameLabel.Text = "Nazwa";
+            // 
+            // bsCompany
+            // 
+            this.bsCompany.DataSource = typeof(BusinessCardHolder.Models.Company);
+            // 
+            // bsEmployees
+            // 
+            this.bsEmployees.DataSource = typeof(BusinessCardHolder.Models.Employee);
             // 
             // CompanyForm
             // 
@@ -442,7 +481,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdEmployees)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -450,6 +489,8 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCompany)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -478,12 +519,14 @@
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.Label lblNotesLabel;
         private System.Windows.Forms.Label lblEmployeesListLabel;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grdEmployees;
         private System.Windows.Forms.Button btnDeleteButton;
         private System.Windows.Forms.Button btnEditButton;
         private System.Windows.Forms.Button btnAddButton;
         private System.Windows.Forms.Button btnSaveButton;
         private System.Windows.Forms.Button btnCancelButton;
+        private System.Windows.Forms.BindingSource bsCompany;
+        private System.Windows.Forms.BindingSource bsEmployees;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmFirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmLastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCompanyName;

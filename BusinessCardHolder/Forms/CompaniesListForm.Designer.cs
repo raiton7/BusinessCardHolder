@@ -102,7 +102,7 @@
             this.btnBackButton.Location = new System.Drawing.Point(9, 8);
             this.btnBackButton.Name = "btnBackButton";
             this.btnBackButton.Size = new System.Drawing.Size(75, 23);
-            this.btnBackButton.TabIndex = 26;
+            this.btnBackButton.TabIndex = 10;
             this.btnBackButton.Text = "Zamknij";
             this.btnBackButton.UseVisualStyleBackColor = true;
             this.btnBackButton.Click += new System.EventHandler(this.btnBackButton_Click);
@@ -125,7 +125,7 @@
             this.btnDeleteButton.Location = new System.Drawing.Point(171, 245);
             this.btnDeleteButton.Name = "btnDeleteButton";
             this.btnDeleteButton.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteButton.TabIndex = 28;
+            this.btnDeleteButton.TabIndex = 9;
             this.btnDeleteButton.Text = "Usuń";
             this.btnDeleteButton.UseVisualStyleBackColor = true;
             this.btnDeleteButton.Click += new System.EventHandler(this.btnDeleteButton_Click);
@@ -136,9 +136,10 @@
             this.btnEditButton.Location = new System.Drawing.Point(90, 245);
             this.btnEditButton.Name = "btnEditButton";
             this.btnEditButton.Size = new System.Drawing.Size(75, 23);
-            this.btnEditButton.TabIndex = 27;
+            this.btnEditButton.TabIndex = 8;
             this.btnEditButton.Text = "Edytuj";
             this.btnEditButton.UseVisualStyleBackColor = true;
+            this.btnEditButton.Click += new System.EventHandler(this.btnEditButton_Click);
             // 
             // btnAddButton
             // 
@@ -146,7 +147,7 @@
             this.btnAddButton.Location = new System.Drawing.Point(9, 245);
             this.btnAddButton.Name = "btnAddButton";
             this.btnAddButton.Size = new System.Drawing.Size(75, 23);
-            this.btnAddButton.TabIndex = 26;
+            this.btnAddButton.TabIndex = 7;
             this.btnAddButton.Text = "Dodaj";
             this.btnAddButton.UseVisualStyleBackColor = true;
             this.btnAddButton.Click += new System.EventHandler(this.btnAddButton_Click);
@@ -282,7 +283,7 @@
             this.btnSearchButton.Location = new System.Drawing.Point(148, 70);
             this.btnSearchButton.Name = "btnSearchButton";
             this.btnSearchButton.Size = new System.Drawing.Size(74, 23);
-            this.btnSearchButton.TabIndex = 24;
+            this.btnSearchButton.TabIndex = 6;
             this.btnSearchButton.Text = "Szukaj";
             this.btnSearchButton.UseVisualStyleBackColor = true;
             // 
@@ -293,7 +294,7 @@
             this.txtSearchPhoneNumber.Location = new System.Drawing.Point(3, 44);
             this.txtSearchPhoneNumber.Name = "txtSearchPhoneNumber";
             this.txtSearchPhoneNumber.Size = new System.Drawing.Size(219, 20);
-            this.txtSearchPhoneNumber.TabIndex = 23;
+            this.txtSearchPhoneNumber.TabIndex = 5;
             this.txtSearchPhoneNumber.Text = "Telefon";
             // 
             // txtSearchAddress
@@ -303,7 +304,7 @@
             this.txtSearchAddress.Location = new System.Drawing.Point(3, 18);
             this.txtSearchAddress.Name = "txtSearchAddress";
             this.txtSearchAddress.Size = new System.Drawing.Size(219, 20);
-            this.txtSearchAddress.TabIndex = 22;
+            this.txtSearchAddress.TabIndex = 2;
             this.txtSearchAddress.Text = "Adres";
             // 
             // panel3
@@ -323,7 +324,7 @@
             this.txtSearchPostCode.Location = new System.Drawing.Point(3, 44);
             this.txtSearchPostCode.Name = "txtSearchPostCode";
             this.txtSearchPostCode.Size = new System.Drawing.Size(220, 20);
-            this.txtSearchPostCode.TabIndex = 21;
+            this.txtSearchPostCode.TabIndex = 4;
             this.txtSearchPostCode.Text = "Kod pocztowy";
             // 
             // txtSearchNip
@@ -333,7 +334,7 @@
             this.txtSearchNip.Location = new System.Drawing.Point(3, 18);
             this.txtSearchNip.Name = "txtSearchNip";
             this.txtSearchNip.Size = new System.Drawing.Size(220, 20);
-            this.txtSearchNip.TabIndex = 20;
+            this.txtSearchNip.TabIndex = 1;
             this.txtSearchNip.Text = "NIP";
             // 
             // panel2
@@ -353,7 +354,7 @@
             this.txtSearchCity.Location = new System.Drawing.Point(3, 44);
             this.txtSearchCity.Name = "txtSearchCity";
             this.txtSearchCity.Size = new System.Drawing.Size(220, 20);
-            this.txtSearchCity.TabIndex = 20;
+            this.txtSearchCity.TabIndex = 3;
             this.txtSearchCity.Text = "Miasto";
             // 
             // txtSearchCompanyName
@@ -363,7 +364,7 @@
             this.txtSearchCompanyName.Location = new System.Drawing.Point(3, 18);
             this.txtSearchCompanyName.Name = "txtSearchCompanyName";
             this.txtSearchCompanyName.Size = new System.Drawing.Size(220, 20);
-            this.txtSearchCompanyName.TabIndex = 19;
+            this.txtSearchCompanyName.TabIndex = 0;
             this.txtSearchCompanyName.Text = "Nazwa";
             // 
             // panel1

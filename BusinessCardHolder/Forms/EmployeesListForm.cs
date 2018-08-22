@@ -22,6 +22,42 @@ namespace BusinessCardHolder.Forms
             Close();
         }
 
+
+        private void btnAddButton_Click(object sender, EventArgs e)
+        {
+            Employee employee = new Employee();
+            EmployeeForm frmEmployeeForm = new EmployeeForm(employee);
+            frmEmployeeForm.MdiParent = MdiParent;
+            frmEmployeeForm.Show();
+            frmEmployeeForm.SaveButton.Click += delegate
+            {
+                employee = frmEmployeeForm.Employee;
+                EmployeeRepository employeeRepository = new EmployeeRepository();
+                employeeRepository.Add(employee);
+                bsEmployees.DataSource = employeeRepository.FindAll();
+                bsEmployees.ResetBindings(false);
+                grdEmployees.Refresh();
+            };
+        }
+
+        private void btnEditButton_Click(object sender, EventArgs e)
+        {
+            Employee employee = new Employee();
+            employee = (Employee)bsEmployees.Current;
+            EmployeeForm frmEmployeeForm = new EmployeeForm(employee);
+            frmEmployeeForm.MdiParent = MdiParent;
+            frmEmployeeForm.Show();
+            frmEmployeeForm.SaveButton.Click += delegate
+            {
+                employee = frmEmployeeForm.Employee;
+                EmployeeRepository employeeRepository = new EmployeeRepository();
+                employeeRepository.Update(employee);
+                bsEmployees.DataSource = employeeRepository.FindAll();
+                bsEmployees.ResetBindings(false);
+                grdEmployees.Refresh();
+            };
+        }
+
         private void btnDeleteButton_Click(object sender, EventArgs e)
         {
             if (bsEmployees.Current is Employee)
@@ -36,5 +72,11 @@ namespace BusinessCardHolder.Forms
                 }
             }
         }
+
+        private void @delegate(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

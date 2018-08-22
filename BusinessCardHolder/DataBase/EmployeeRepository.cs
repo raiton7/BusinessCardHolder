@@ -51,6 +51,12 @@ namespace BusinessCardHolder.DataBase
             return employee;
         }
 
+        public List<Employee> FindByCompanyId(int id)
+        {
+            List<Employee> employees = businessCardHolderContext.Employees.Where(c => c.CompanyId == id).ToList();
+            return employees;
+        }
+
         public IEnumerable<Employee> FindAll()
         {
             return businessCardHolderContext.Employees.ToList();
