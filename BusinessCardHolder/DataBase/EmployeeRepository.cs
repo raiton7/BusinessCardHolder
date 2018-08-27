@@ -22,6 +22,11 @@ namespace BusinessCardHolder.DataBase
             businessCardHolderContext.SaveChanges();
         }
 
+
+        /// <summary>
+        /// test
+        /// </summary>
+        /// <param name="id">tu id</param>
         public void DeleteById(int id)
         {
             Employee employee = businessCardHolderContext.Employees.Find(id);
@@ -65,8 +70,12 @@ namespace BusinessCardHolder.DataBase
         public IEnumerable<Employee> Search(string firstName, string lastName, string companyName, string jobTitle, string phoneNumber, string mobileNumber)
         {
             List<Employee> employees = businessCardHolderContext.Employees.Where(e => 
-                e.FirstName.Contains(firstName) && e.LastName.Contains(lastName) && e.Company.Name.Contains(companyName) && 
-                e.JobTitle.Contains(jobTitle) && e.PhoneNumber.Contains(phoneNumber) && e.MobilePhoneNumber.Contains(mobileNumber))
+                e.FirstName.Contains(firstName) && 
+                e.LastName.Contains(lastName) && 
+                e.Company.Name.Contains(companyName) && 
+                e.JobTitle.Contains(jobTitle) && 
+                e.PhoneNumber.Contains(phoneNumber) && 
+                e.MobilePhoneNumber.Contains(mobileNumber))
                 .ToList();
             return employees;
         }

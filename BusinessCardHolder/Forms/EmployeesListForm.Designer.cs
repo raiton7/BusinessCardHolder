@@ -32,13 +32,19 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnBackButton = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblMobileNumber = new System.Windows.Forms.Label();
+            this.lblCompanyName = new System.Windows.Forms.Label();
             this.btnSearchButton = new System.Windows.Forms.Button();
             this.txtSearchMobilePhoneNumber = new System.Windows.Forms.TextBox();
             this.txtSearchCompanyName = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
             this.txtSearchPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtSearchLastName = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblJobTitle = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
             this.txtSearchJobTitle = new System.Windows.Forms.TextBox();
             this.txtSearchFirstName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,15 +53,15 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.grdEmployees = new System.Windows.Forms.DataGridView();
-            this.btnAddButton = new System.Windows.Forms.Button();
-            this.btnDeleteButton = new System.Windows.Forms.Button();
-            this.btnEditButton = new System.Windows.Forms.Button();
             this.clmFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmJobTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMobilePhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddButton = new System.Windows.Forms.Button();
+            this.btnDeleteButton = new System.Windows.Forms.Button();
+            this.btnEditButton = new System.Windows.Forms.Button();
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -75,7 +81,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 455);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(755, 34);
+            this.panel6.Size = new System.Drawing.Size(768, 34);
             this.panel6.TabIndex = 2;
             // 
             // btnBackButton
@@ -91,19 +97,39 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.lblMobileNumber);
+            this.panel4.Controls.Add(this.lblCompanyName);
             this.panel4.Controls.Add(this.btnSearchButton);
             this.panel4.Controls.Add(this.txtSearchMobilePhoneNumber);
             this.panel4.Controls.Add(this.txtSearchCompanyName);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(530, 3);
+            this.panel4.Location = new System.Drawing.Point(539, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(222, 138);
+            this.panel4.Size = new System.Drawing.Size(226, 138);
             this.panel4.TabIndex = 3;
+            // 
+            // lblMobileNumber
+            // 
+            this.lblMobileNumber.AutoSize = true;
+            this.lblMobileNumber.Location = new System.Drawing.Point(3, 55);
+            this.lblMobileNumber.Name = "lblMobileNumber";
+            this.lblMobileNumber.Size = new System.Drawing.Size(110, 13);
+            this.lblMobileNumber.TabIndex = 66;
+            this.lblMobileNumber.Text = "Nr Tel. Komórkowego";
+            // 
+            // lblCompanyName
+            // 
+            this.lblCompanyName.AutoSize = true;
+            this.lblCompanyName.Location = new System.Drawing.Point(3, 16);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(64, 13);
+            this.lblCompanyName.TabIndex = 65;
+            this.lblCompanyName.Text = "Nazwa firmy";
             // 
             // btnSearchButton
             // 
             this.btnSearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchButton.Location = new System.Drawing.Point(128, 65);
+            this.btnSearchButton.Location = new System.Drawing.Point(132, 103);
             this.btnSearchButton.Name = "btnSearchButton";
             this.btnSearchButton.Size = new System.Drawing.Size(75, 23);
             this.btnSearchButton.TabIndex = 64;
@@ -115,81 +141,115 @@
             // 
             this.txtSearchMobilePhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchMobilePhoneNumber.Location = new System.Drawing.Point(3, 39);
+            this.txtSearchMobilePhoneNumber.Location = new System.Drawing.Point(3, 71);
             this.txtSearchMobilePhoneNumber.Name = "txtSearchMobilePhoneNumber";
-            this.txtSearchMobilePhoneNumber.Size = new System.Drawing.Size(200, 20);
+            this.txtSearchMobilePhoneNumber.Size = new System.Drawing.Size(204, 20);
             this.txtSearchMobilePhoneNumber.TabIndex = 63;
-            this.txtSearchMobilePhoneNumber.Text = "Nr Tel. Komórkowego";
             // 
             // txtSearchCompanyName
             // 
             this.txtSearchCompanyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchCompanyName.Location = new System.Drawing.Point(3, 13);
+            this.txtSearchCompanyName.Location = new System.Drawing.Point(3, 32);
             this.txtSearchCompanyName.Name = "txtSearchCompanyName";
-            this.txtSearchCompanyName.Size = new System.Drawing.Size(200, 20);
+            this.txtSearchCompanyName.Size = new System.Drawing.Size(204, 20);
             this.txtSearchCompanyName.TabIndex = 62;
-            this.txtSearchCompanyName.Text = "Firma";
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblPhoneNumber);
+            this.panel3.Controls.Add(this.lblLastName);
             this.panel3.Controls.Add(this.txtSearchPhoneNumber);
             this.panel3.Controls.Add(this.txtSearchLastName);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(304, 3);
+            this.panel3.Location = new System.Drawing.Point(309, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(220, 138);
+            this.panel3.Size = new System.Drawing.Size(224, 138);
             this.panel3.TabIndex = 2;
+            // 
+            // lblPhoneNumber
+            // 
+            this.lblPhoneNumber.AutoSize = true;
+            this.lblPhoneNumber.Location = new System.Drawing.Point(3, 55);
+            this.lblPhoneNumber.Name = "lblPhoneNumber";
+            this.lblPhoneNumber.Size = new System.Drawing.Size(63, 13);
+            this.lblPhoneNumber.TabIndex = 64;
+            this.lblPhoneNumber.Text = "Nr Telefonu";
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Location = new System.Drawing.Point(3, 16);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(53, 13);
+            this.lblLastName.TabIndex = 63;
+            this.lblLastName.Text = "Nazwisko";
             // 
             // txtSearchPhoneNumber
             // 
             this.txtSearchPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchPhoneNumber.Location = new System.Drawing.Point(3, 39);
+            this.txtSearchPhoneNumber.Location = new System.Drawing.Point(3, 71);
             this.txtSearchPhoneNumber.Name = "txtSearchPhoneNumber";
-            this.txtSearchPhoneNumber.Size = new System.Drawing.Size(201, 20);
+            this.txtSearchPhoneNumber.Size = new System.Drawing.Size(205, 20);
             this.txtSearchPhoneNumber.TabIndex = 62;
-            this.txtSearchPhoneNumber.Text = "Nr Telefonu";
             // 
             // txtSearchLastName
             // 
             this.txtSearchLastName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchLastName.Location = new System.Drawing.Point(3, 13);
+            this.txtSearchLastName.Location = new System.Drawing.Point(3, 32);
             this.txtSearchLastName.Name = "txtSearchLastName";
-            this.txtSearchLastName.Size = new System.Drawing.Size(201, 20);
+            this.txtSearchLastName.Size = new System.Drawing.Size(205, 20);
             this.txtSearchLastName.TabIndex = 61;
-            this.txtSearchLastName.Text = "Nazwisko";
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblJobTitle);
+            this.panel2.Controls.Add(this.lblFirstName);
             this.panel2.Controls.Add(this.txtSearchJobTitle);
             this.panel2.Controls.Add(this.txtSearchFirstName);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(78, 3);
+            this.panel2.Location = new System.Drawing.Point(79, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(220, 138);
+            this.panel2.Size = new System.Drawing.Size(224, 138);
             this.panel2.TabIndex = 1;
+            // 
+            // lblJobTitle
+            // 
+            this.lblJobTitle.AutoSize = true;
+            this.lblJobTitle.Location = new System.Drawing.Point(3, 55);
+            this.lblJobTitle.Name = "lblJobTitle";
+            this.lblJobTitle.Size = new System.Drawing.Size(62, 13);
+            this.lblJobTitle.TabIndex = 62;
+            this.lblJobTitle.Text = "Stanowisko";
+            // 
+            // lblFirstName
+            // 
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Location = new System.Drawing.Point(3, 16);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(26, 13);
+            this.lblFirstName.TabIndex = 61;
+            this.lblFirstName.Text = "Imię";
             // 
             // txtSearchJobTitle
             // 
             this.txtSearchJobTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchJobTitle.Location = new System.Drawing.Point(3, 39);
+            this.txtSearchJobTitle.Location = new System.Drawing.Point(3, 71);
             this.txtSearchJobTitle.Name = "txtSearchJobTitle";
-            this.txtSearchJobTitle.Size = new System.Drawing.Size(201, 20);
+            this.txtSearchJobTitle.Size = new System.Drawing.Size(205, 20);
             this.txtSearchJobTitle.TabIndex = 60;
-            this.txtSearchJobTitle.Text = "Stanowisko";
             // 
             // txtSearchFirstName
             // 
             this.txtSearchFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchFirstName.Location = new System.Drawing.Point(3, 13);
+            this.txtSearchFirstName.Location = new System.Drawing.Point(3, 32);
             this.txtSearchFirstName.Name = "txtSearchFirstName";
-            this.txtSearchFirstName.Size = new System.Drawing.Size(201, 20);
+            this.txtSearchFirstName.Size = new System.Drawing.Size(205, 20);
             this.txtSearchFirstName.TabIndex = 59;
-            this.txtSearchFirstName.Text = "Imię";
             // 
             // panel1
             // 
@@ -197,15 +257,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(69, 138);
+            this.panel1.Size = new System.Drawing.Size(70, 138);
             this.panel1.TabIndex = 0;
             // 
             // lblSearchLabel
             // 
             this.lblSearchLabel.AutoSize = true;
+            this.lblSearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblSearchLabel.Location = new System.Drawing.Point(6, 16);
             this.lblSearchLabel.Name = "lblSearchLabel";
-            this.lblSearchLabel.Size = new System.Drawing.Size(42, 13);
+            this.lblSearchLabel.Size = new System.Drawing.Size(49, 13);
             this.lblSearchLabel.TabIndex = 55;
             this.lblSearchLabel.Text = "Szukaj:";
             // 
@@ -225,7 +286,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(755, 144);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(768, 144);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -242,7 +303,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(761, 492);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(774, 492);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panel5
@@ -254,7 +315,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 153);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(755, 296);
+            this.panel5.Size = new System.Drawing.Size(768, 296);
             this.panel5.TabIndex = 1;
             // 
             // grdEmployees
@@ -275,41 +336,8 @@
             this.grdEmployees.Location = new System.Drawing.Point(9, 3);
             this.grdEmployees.Name = "grdEmployees";
             this.grdEmployees.ReadOnly = true;
-            this.grdEmployees.Size = new System.Drawing.Size(737, 229);
+            this.grdEmployees.Size = new System.Drawing.Size(750, 229);
             this.grdEmployees.TabIndex = 57;
-            // 
-            // btnAddButton
-            // 
-            this.btnAddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddButton.Location = new System.Drawing.Point(9, 238);
-            this.btnAddButton.Name = "btnAddButton";
-            this.btnAddButton.Size = new System.Drawing.Size(75, 23);
-            this.btnAddButton.TabIndex = 54;
-            this.btnAddButton.Text = "Dodaj";
-            this.btnAddButton.UseVisualStyleBackColor = true;
-            this.btnAddButton.Click += new System.EventHandler(this.btnAddButton_Click);
-            // 
-            // btnDeleteButton
-            // 
-            this.btnDeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDeleteButton.Location = new System.Drawing.Point(171, 238);
-            this.btnDeleteButton.Name = "btnDeleteButton";
-            this.btnDeleteButton.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteButton.TabIndex = 56;
-            this.btnDeleteButton.Text = "Usuń";
-            this.btnDeleteButton.UseVisualStyleBackColor = true;
-            this.btnDeleteButton.Click += new System.EventHandler(this.btnDeleteButton_Click);
-            // 
-            // btnEditButton
-            // 
-            this.btnEditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEditButton.Location = new System.Drawing.Point(90, 238);
-            this.btnEditButton.Name = "btnEditButton";
-            this.btnEditButton.Size = new System.Drawing.Size(75, 23);
-            this.btnEditButton.TabIndex = 55;
-            this.btnEditButton.Text = "Edytuj";
-            this.btnEditButton.UseVisualStyleBackColor = true;
-            this.btnEditButton.Click += new System.EventHandler(this.btnEditButton_Click);
             // 
             // clmFirstName
             // 
@@ -366,6 +394,39 @@
             this.clmMobilePhoneNumber.Name = "clmMobilePhoneNumber";
             this.clmMobilePhoneNumber.ReadOnly = true;
             // 
+            // btnAddButton
+            // 
+            this.btnAddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddButton.Location = new System.Drawing.Point(9, 238);
+            this.btnAddButton.Name = "btnAddButton";
+            this.btnAddButton.Size = new System.Drawing.Size(75, 23);
+            this.btnAddButton.TabIndex = 54;
+            this.btnAddButton.Text = "Dodaj";
+            this.btnAddButton.UseVisualStyleBackColor = true;
+            this.btnAddButton.Click += new System.EventHandler(this.btnAddButton_Click);
+            // 
+            // btnDeleteButton
+            // 
+            this.btnDeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDeleteButton.Location = new System.Drawing.Point(171, 238);
+            this.btnDeleteButton.Name = "btnDeleteButton";
+            this.btnDeleteButton.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteButton.TabIndex = 56;
+            this.btnDeleteButton.Text = "Usuń";
+            this.btnDeleteButton.UseVisualStyleBackColor = true;
+            this.btnDeleteButton.Click += new System.EventHandler(this.btnDeleteButton_Click);
+            // 
+            // btnEditButton
+            // 
+            this.btnEditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEditButton.Location = new System.Drawing.Point(90, 238);
+            this.btnEditButton.Name = "btnEditButton";
+            this.btnEditButton.Size = new System.Drawing.Size(75, 23);
+            this.btnEditButton.TabIndex = 55;
+            this.btnEditButton.Text = "Edytuj";
+            this.btnEditButton.UseVisualStyleBackColor = true;
+            this.btnEditButton.Click += new System.EventHandler(this.btnEditButton_Click);
+            // 
             // bsEmployees
             // 
             this.bsEmployees.DataSource = typeof(BusinessCardHolder.Models.Employee);
@@ -374,7 +435,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 492);
+            this.ClientSize = new System.Drawing.Size(774, 492);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(540, 440);
             this.Name = "EmployeesListForm";
@@ -427,5 +488,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmJobTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPhoneNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMobilePhoneNumber;
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Label lblMobileNumber;
+        private System.Windows.Forms.Label lblCompanyName;
+        private System.Windows.Forms.Label lblPhoneNumber;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblJobTitle;
     }
 }

@@ -39,17 +39,24 @@
             this.grdCompanies = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
             this.btnSearchButton = new System.Windows.Forms.Button();
             this.txtSearchPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtSearchAddress = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblPostCode = new System.Windows.Forms.Label();
+            this.lblNip = new System.Windows.Forms.Label();
             this.txtSearchPostCode = new System.Windows.Forms.TextBox();
             this.txtSearchNip = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblCompanyName = new System.Windows.Forms.Label();
             this.txtSearchCity = new System.Windows.Forms.TextBox();
             this.txtSearchCompanyName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblSearchLabel = new System.Windows.Forms.Label();
+            this.bsCompanies = new System.Windows.Forms.BindingSource(this.components);
             this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNip = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +65,6 @@
             this.clmPostCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsCompanies = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -196,6 +202,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.lblPhoneNumber);
+            this.panel4.Controls.Add(this.lblAddress);
             this.panel4.Controls.Add(this.btnSearchButton);
             this.panel4.Controls.Add(this.txtSearchPhoneNumber);
             this.panel4.Controls.Add(this.txtSearchAddress);
@@ -205,10 +213,28 @@
             this.panel4.Size = new System.Drawing.Size(260, 138);
             this.panel4.TabIndex = 3;
             // 
+            // lblPhoneNumber
+            // 
+            this.lblPhoneNumber.AutoSize = true;
+            this.lblPhoneNumber.Location = new System.Drawing.Point(3, 57);
+            this.lblPhoneNumber.Name = "lblPhoneNumber";
+            this.lblPhoneNumber.Size = new System.Drawing.Size(43, 13);
+            this.lblPhoneNumber.TabIndex = 63;
+            this.lblPhoneNumber.Text = "Telefon";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(3, 18);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(34, 13);
+            this.lblAddress.TabIndex = 62;
+            this.lblAddress.Text = "Adres";
+            // 
             // btnSearchButton
             // 
             this.btnSearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchButton.Location = new System.Drawing.Point(148, 70);
+            this.btnSearchButton.Location = new System.Drawing.Point(148, 99);
             this.btnSearchButton.Name = "btnSearchButton";
             this.btnSearchButton.Size = new System.Drawing.Size(74, 23);
             this.btnSearchButton.TabIndex = 6;
@@ -220,24 +246,24 @@
             // 
             this.txtSearchPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchPhoneNumber.Location = new System.Drawing.Point(3, 44);
+            this.txtSearchPhoneNumber.Location = new System.Drawing.Point(3, 73);
             this.txtSearchPhoneNumber.Name = "txtSearchPhoneNumber";
             this.txtSearchPhoneNumber.Size = new System.Drawing.Size(219, 20);
             this.txtSearchPhoneNumber.TabIndex = 5;
-            this.txtSearchPhoneNumber.Text = "Telefon";
             // 
             // txtSearchAddress
             // 
             this.txtSearchAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchAddress.Location = new System.Drawing.Point(3, 18);
+            this.txtSearchAddress.Location = new System.Drawing.Point(3, 34);
             this.txtSearchAddress.Name = "txtSearchAddress";
             this.txtSearchAddress.Size = new System.Drawing.Size(219, 20);
             this.txtSearchAddress.TabIndex = 2;
-            this.txtSearchAddress.Text = "Adres";
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblPostCode);
+            this.panel3.Controls.Add(this.lblNip);
             this.panel3.Controls.Add(this.txtSearchPostCode);
             this.panel3.Controls.Add(this.txtSearchNip);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -246,28 +272,46 @@
             this.panel3.Size = new System.Drawing.Size(258, 138);
             this.panel3.TabIndex = 2;
             // 
+            // lblPostCode
+            // 
+            this.lblPostCode.AutoSize = true;
+            this.lblPostCode.Location = new System.Drawing.Point(3, 57);
+            this.lblPostCode.Name = "lblPostCode";
+            this.lblPostCode.Size = new System.Drawing.Size(75, 13);
+            this.lblPostCode.TabIndex = 63;
+            this.lblPostCode.Text = "Kod Pocztowy";
+            // 
+            // lblNip
+            // 
+            this.lblNip.AutoSize = true;
+            this.lblNip.Location = new System.Drawing.Point(3, 18);
+            this.lblNip.Name = "lblNip";
+            this.lblNip.Size = new System.Drawing.Size(25, 13);
+            this.lblNip.TabIndex = 62;
+            this.lblNip.Text = "NIP";
+            // 
             // txtSearchPostCode
             // 
             this.txtSearchPostCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchPostCode.Location = new System.Drawing.Point(3, 44);
+            this.txtSearchPostCode.Location = new System.Drawing.Point(3, 73);
             this.txtSearchPostCode.Name = "txtSearchPostCode";
             this.txtSearchPostCode.Size = new System.Drawing.Size(220, 20);
             this.txtSearchPostCode.TabIndex = 4;
-            this.txtSearchPostCode.Text = "Kod pocztowy";
             // 
             // txtSearchNip
             // 
             this.txtSearchNip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchNip.Location = new System.Drawing.Point(3, 18);
+            this.txtSearchNip.Location = new System.Drawing.Point(3, 34);
             this.txtSearchNip.Name = "txtSearchNip";
             this.txtSearchNip.Size = new System.Drawing.Size(220, 20);
             this.txtSearchNip.TabIndex = 1;
-            this.txtSearchNip.Text = "NIP";
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblCity);
+            this.panel2.Controls.Add(this.lblCompanyName);
             this.panel2.Controls.Add(this.txtSearchCity);
             this.panel2.Controls.Add(this.txtSearchCompanyName);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -276,25 +320,41 @@
             this.panel2.Size = new System.Drawing.Size(258, 138);
             this.panel2.TabIndex = 1;
             // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Location = new System.Drawing.Point(3, 57);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(38, 13);
+            this.lblCity.TabIndex = 63;
+            this.lblCity.Text = "Miasto";
+            // 
+            // lblCompanyName
+            // 
+            this.lblCompanyName.AutoSize = true;
+            this.lblCompanyName.Location = new System.Drawing.Point(3, 18);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(40, 13);
+            this.lblCompanyName.TabIndex = 62;
+            this.lblCompanyName.Text = "Nazwa";
+            // 
             // txtSearchCity
             // 
             this.txtSearchCity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchCity.Location = new System.Drawing.Point(3, 44);
+            this.txtSearchCity.Location = new System.Drawing.Point(3, 73);
             this.txtSearchCity.Name = "txtSearchCity";
             this.txtSearchCity.Size = new System.Drawing.Size(220, 20);
             this.txtSearchCity.TabIndex = 3;
-            this.txtSearchCity.Text = "Miasto";
             // 
             // txtSearchCompanyName
             // 
             this.txtSearchCompanyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchCompanyName.Location = new System.Drawing.Point(3, 18);
+            this.txtSearchCompanyName.Location = new System.Drawing.Point(3, 34);
             this.txtSearchCompanyName.Name = "txtSearchCompanyName";
             this.txtSearchCompanyName.Size = new System.Drawing.Size(220, 20);
             this.txtSearchCompanyName.TabIndex = 0;
-            this.txtSearchCompanyName.Text = "Nazwa";
             // 
             // panel1
             // 
@@ -308,18 +368,23 @@
             // lblSearchLabel
             // 
             this.lblSearchLabel.AutoSize = true;
-            this.lblSearchLabel.Location = new System.Drawing.Point(3, 18);
+            this.lblSearchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSearchLabel.Location = new System.Drawing.Point(6, 18);
             this.lblSearchLabel.Name = "lblSearchLabel";
-            this.lblSearchLabel.Size = new System.Drawing.Size(42, 13);
+            this.lblSearchLabel.Size = new System.Drawing.Size(49, 13);
             this.lblSearchLabel.TabIndex = 15;
             this.lblSearchLabel.Text = "Szukaj:";
+            // 
+            // bsCompanies
+            // 
+            this.bsCompanies.DataSource = typeof(BusinessCardHolder.Models.Company);
             // 
             // clmId
             // 
             this.clmId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmId.DataPropertyName = "Id";
             this.clmId.HeaderText = "ID";
-            this.clmId.MinimumWidth = 35;
+            this.clmId.MinimumWidth = 2;
             this.clmId.Name = "clmId";
             this.clmId.ReadOnly = true;
             // 
@@ -328,7 +393,7 @@
             this.clmCompanyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmCompanyName.DataPropertyName = "Name";
             this.clmCompanyName.HeaderText = "Nazwa";
-            this.clmCompanyName.MinimumWidth = 80;
+            this.clmCompanyName.MinimumWidth = 2;
             this.clmCompanyName.Name = "clmCompanyName";
             this.clmCompanyName.ReadOnly = true;
             // 
@@ -337,7 +402,7 @@
             this.clmNip.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmNip.DataPropertyName = "Nip";
             this.clmNip.HeaderText = "NIP";
-            this.clmNip.MinimumWidth = 60;
+            this.clmNip.MinimumWidth = 2;
             this.clmNip.Name = "clmNip";
             this.clmNip.ReadOnly = true;
             // 
@@ -346,7 +411,7 @@
             this.clmAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmAddress.DataPropertyName = "Address";
             this.clmAddress.HeaderText = "Adres";
-            this.clmAddress.MinimumWidth = 150;
+            this.clmAddress.MinimumWidth = 2;
             this.clmAddress.Name = "clmAddress";
             this.clmAddress.ReadOnly = true;
             // 
@@ -355,7 +420,7 @@
             this.clmCity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmCity.DataPropertyName = "City";
             this.clmCity.HeaderText = "Miasto";
-            this.clmCity.MinimumWidth = 80;
+            this.clmCity.MinimumWidth = 2;
             this.clmCity.Name = "clmCity";
             this.clmCity.ReadOnly = true;
             // 
@@ -364,7 +429,7 @@
             this.clmPostCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmPostCode.DataPropertyName = "PostCode";
             this.clmPostCode.HeaderText = "Kod Pocztowy";
-            this.clmPostCode.MinimumWidth = 50;
+            this.clmPostCode.MinimumWidth = 2;
             this.clmPostCode.Name = "clmPostCode";
             this.clmPostCode.ReadOnly = true;
             // 
@@ -373,7 +438,7 @@
             this.clmPhoneNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmPhoneNumber.DataPropertyName = "PhoneNumber";
             this.clmPhoneNumber.HeaderText = "Telefon";
-            this.clmPhoneNumber.MinimumWidth = 80;
+            this.clmPhoneNumber.MinimumWidth = 2;
             this.clmPhoneNumber.Name = "clmPhoneNumber";
             this.clmPhoneNumber.ReadOnly = true;
             // 
@@ -382,13 +447,9 @@
             this.clmNotes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmNotes.DataPropertyName = "Notes";
             this.clmNotes.HeaderText = "Uwagi";
-            this.clmNotes.MinimumWidth = 120;
+            this.clmNotes.MinimumWidth = 2;
             this.clmNotes.Name = "clmNotes";
             this.clmNotes.ReadOnly = true;
-            // 
-            // bsCompanies
-            // 
-            this.bsCompanies.DataSource = typeof(BusinessCardHolder.Models.Company);
             // 
             // CompaniesListForm
             // 
@@ -441,6 +502,12 @@
         private System.Windows.Forms.Button btnAddButton;
         private System.Windows.Forms.DataGridView grdCompanies;
         private System.Windows.Forms.BindingSource bsCompanies;
+        private System.Windows.Forms.Label lblPhoneNumber;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.Label lblPostCode;
+        private System.Windows.Forms.Label lblNip;
+        private System.Windows.Forms.Label lblCity;
+        private System.Windows.Forms.Label lblCompanyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmId;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCompanyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNip;

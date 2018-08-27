@@ -9,6 +9,7 @@ namespace BusinessCardHolder.Forms
     {
         public Company Company { get; set; }
         public Button SaveButton { get { return btnSaveButton; } } 
+        public Button CancelChangesButton { get { return btnCancelButton; } }
         public Button AddButton { get { return btnAddButton; } }
         public Button EditButton { get { return btnEditButton; } }
         public Button DeleteButton { get { return btnDeleteButton; } }
@@ -27,7 +28,6 @@ namespace BusinessCardHolder.Forms
         private void btnSaveButton_Click(object sender, EventArgs e)
         {
             Company = (Company)bsCompany.Current;
-            Close();
         }
 
         private void btnAddButton_Click(object sender, EventArgs e)
@@ -67,6 +67,12 @@ namespace BusinessCardHolder.Forms
                 grdEmployees.DataSource = bsEmployees;
                 bsEmployees.ResetBindings(false);
                 grdEmployees.Refresh();
+            };
+            frmEmployeeForm.CancelChangesButton.Click += delegate
+            {
+                EmployeeRepository employeeRepository = new EmployeeRepository();
+                bsEmployees.DataSource = employeeRepository.FindByCompanyId(Company.Id);
+                bsEmployees.ResetBindings(false);
             };
         }
 

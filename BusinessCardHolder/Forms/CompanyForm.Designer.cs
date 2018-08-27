@@ -48,6 +48,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtNotes = new System.Windows.Forms.TextBox();
+            this.bsCompany = new System.Windows.Forms.BindingSource(this.components);
             this.lblNotesLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblPhoneNumberLabel = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtNip = new System.Windows.Forms.TextBox();
             this.lblCompanyNameLabel = new System.Windows.Forms.Label();
-            this.bsCompany = new System.Windows.Forms.BindingSource(this.components);
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.panel6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -71,9 +71,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdEmployees)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCompany)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,7 +119,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 508);
@@ -133,9 +133,9 @@
             this.panel5.Controls.Add(this.btnEditButton);
             this.panel5.Controls.Add(this.btnAddButton);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 153);
+            this.panel5.Location = new System.Drawing.Point(3, 113);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(756, 312);
+            this.panel5.Size = new System.Drawing.Size(756, 352);
             this.panel5.TabIndex = 1;
             // 
             // lblEmployeesListLabel
@@ -165,7 +165,7 @@
             this.grdEmployees.Location = new System.Drawing.Point(10, 25);
             this.grdEmployees.Name = "grdEmployees";
             this.grdEmployees.ReadOnly = true;
-            this.grdEmployees.Size = new System.Drawing.Size(733, 229);
+            this.grdEmployees.Size = new System.Drawing.Size(733, 269);
             this.grdEmployees.TabIndex = 12;
             // 
             // clmFirstName
@@ -225,7 +225,7 @@
             // btnDeleteButton
             // 
             this.btnDeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDeleteButton.Location = new System.Drawing.Point(171, 260);
+            this.btnDeleteButton.Location = new System.Drawing.Point(171, 300);
             this.btnDeleteButton.Name = "btnDeleteButton";
             this.btnDeleteButton.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteButton.TabIndex = 9;
@@ -236,7 +236,7 @@
             // btnEditButton
             // 
             this.btnEditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEditButton.Location = new System.Drawing.Point(90, 260);
+            this.btnEditButton.Location = new System.Drawing.Point(90, 300);
             this.btnEditButton.Name = "btnEditButton";
             this.btnEditButton.Size = new System.Drawing.Size(75, 23);
             this.btnEditButton.TabIndex = 8;
@@ -247,7 +247,7 @@
             // btnAddButton
             // 
             this.btnAddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddButton.Location = new System.Drawing.Point(9, 260);
+            this.btnAddButton.Location = new System.Drawing.Point(9, 300);
             this.btnAddButton.Name = "btnAddButton";
             this.btnAddButton.Size = new System.Drawing.Size(75, 23);
             this.btnAddButton.TabIndex = 7;
@@ -269,17 +269,17 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(756, 144);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(756, 104);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.txtNotes);
             this.panel3.Controls.Add(this.lblNotesLabel);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(507, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(246, 138);
+            this.panel3.Size = new System.Drawing.Size(246, 98);
             this.panel3.TabIndex = 2;
             // 
             // txtNotes
@@ -291,8 +291,12 @@
             this.txtNotes.Location = new System.Drawing.Point(6, 19);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(179, 49);
+            this.txtNotes.Size = new System.Drawing.Size(168, 50);
             this.txtNotes.TabIndex = 6;
+            // 
+            // bsCompany
+            // 
+            this.bsCompany.DataSource = typeof(BusinessCardHolder.Models.Company);
             // 
             // lblNotesLabel
             // 
@@ -314,10 +318,10 @@
             this.panel2.Controls.Add(this.txtPhoneNumber);
             this.panel2.Controls.Add(this.txtPostCode);
             this.panel2.Controls.Add(this.lblCityLabel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(255, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(246, 138);
+            this.panel2.Size = new System.Drawing.Size(246, 98);
             this.panel2.TabIndex = 1;
             // 
             // lblPhoneNumberLabel
@@ -391,10 +395,10 @@
             this.panel1.Controls.Add(this.txtAddress);
             this.panel1.Controls.Add(this.txtNip);
             this.panel1.Controls.Add(this.lblCompanyNameLabel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(246, 138);
+            this.panel1.Size = new System.Drawing.Size(246, 98);
             this.panel1.TabIndex = 0;
             // 
             // lblAddressLabel
@@ -460,10 +464,6 @@
             this.lblCompanyNameLabel.TabIndex = 47;
             this.lblCompanyNameLabel.Text = "Nazwa";
             // 
-            // bsCompany
-            // 
-            this.bsCompany.DataSource = typeof(BusinessCardHolder.Models.Company);
-            // 
             // bsEmployees
             // 
             this.bsEmployees.DataSource = typeof(BusinessCardHolder.Models.Employee);
@@ -485,11 +485,11 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCompany)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmployees)).EndInit();
             this.ResumeLayout(false);
 

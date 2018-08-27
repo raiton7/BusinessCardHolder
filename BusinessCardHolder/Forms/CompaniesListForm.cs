@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessCardHolder.DataBase;
 using BusinessCardHolder.Models;
@@ -17,7 +10,6 @@ namespace BusinessCardHolder.Forms
         public CompaniesListForm()
         {
             InitializeComponent();
-            
             CompanyRepository companyRepository = new CompanyRepository();
             bsCompanies.DataSource = companyRepository.FindAll();
             grdCompanies.AutoGenerateColumns = false;
@@ -42,11 +34,21 @@ namespace BusinessCardHolder.Forms
             frmCompanyForm.SaveButton.Click += delegate
             {
                 company = frmCompanyForm.Company;
+                string errorText = string.Empty;
                 CompanyRepository companyRepository = new CompanyRepository();
-                companyRepository.Add(company);
+                if (Validation.ValidateCompany(company, ref errorText))
+                {
+                    companyRepository.Add(company);
+                    frmCompanyForm.Close();
+                }
+                else
+                {
+                    ShowErrorMessage(errorText);
+                }
                 bsCompanies.DataSource = companyRepository.FindAll();
-                bsCompanies.ResetBindings(false);
+                grdCompanies.Refresh();
             };
+                    
         }
 
 
@@ -61,24 +63,44 @@ namespace BusinessCardHolder.Forms
             frmCompanyForm.SaveButton.Click += delegate
             {
                 company = frmCompanyForm.Company;
+                string errorText = string.Empty;
                 CompanyRepository companyRepository = new CompanyRepository();
-                companyRepository.Update(company);
+                if (Validation.ValidateCompany(company, ref errorText))
+                {
+                    companyRepository.Update(company);
+                    frmCompanyForm.Close();
+                }
+                else
+                {
+                    ShowErrorMessage(errorText);
+                }
                 bsCompanies.DataSource = companyRepository.FindAll();
-                bsCompanies.ResetBindings(false);
+                grdCompanies.Refresh();
+
+            };
+            frmCompanyForm.CancelChangesButton.Click += delegate
+            {
+                CompanyRepository companyRepository = new CompanyRepository();
+                bsCompanies.DataSource = companyRepository.FindAll();
+                grdCompanies.Refresh();
             };
         }
+
+
 
         private void btnDeleteButton_Click(object sender, EventArgs e)
         {
             if (bsCompanies.Current is Company)
             {
-                DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć wybraną firmę?", "Potwierdzienie usunięcia", MessageBoxButtons.OKCancel);
+                DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć wybraną firmę?"
+                    , "Potwierdzienie usunięcia"
+                    , MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)
                 {
                     CompanyRepository companyRepository = new CompanyRepository();
                     companyRepository.DeleteById(((Company)bsCompanies.Current).Id);
                     bsCompanies.DataSource = companyRepository.FindAll();
-                    bsCompanies.ResetBindings(false);
+                    grdCompanies.Refresh();
                 }
             }
         }
@@ -93,7 +115,49 @@ namespace BusinessCardHolder.Forms
             CompanyRepository companyRepository = new CompanyRepository();
             bsCompanies.DataSource = companyRepository.Search(txtSearchCompanyName.Text, txtSearchNip.Text, txtSearchAddress.Text,
                                                                 txtSearchCity.Text, txtSearchPostCode.Text, txtSearchPhoneNumber.Text);
-            bsCompanies.ResetBindings(false);
+            grdCompanies.Refresh();
+        }
+
+        private void ShowErrorMessage(string errorText)
+        {
+            switch (errorText)
+            {
+                case "name":
+                    {
+                        MessageBox.Show("Błędna nazwa firmy", "Błąd", MessageBoxButtons.OK);
+                        break;
+                    }
+                case "nip":
+                    {
+                        MessageBox.Show("Błędny NIP", "Błąd", MessageBoxButtons.OK);
+                        break;
+                    }
+                case "address":
+                    {
+                        MessageBox.Show("Błędny adres", "Błąd", MessageBoxButtons.OK);
+                        break;
+                    }
+                case "city":
+                    {
+                        MessageBox.Show("Błędna nazwa miasta", "Błąd", MessageBoxButtons.OK);
+                        break;
+                    }
+                case "postCode":
+                    {
+                        MessageBox.Show("Błędny kod pocztowy", "Błąd", MessageBoxButtons.OK);
+                        break;
+                    }
+                case "phone":
+                    {
+                        MessageBox.Show("Błędny numer telefonu", "Błąd", MessageBoxButtons.OK);
+                        break;
+                    }
+                default:
+                    {
+                        MessageBox.Show("Nieznany błąd", "Błąd", MessageBoxButtons.OK);
+                        break;
+                    }
+            }
         }
     }
 }

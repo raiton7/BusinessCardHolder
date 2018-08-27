@@ -94,6 +94,7 @@
     <Compile Include="Forms\EmployeesListForm.Designer.cs">
       <DependentUpon>EmployeesListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Validation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\BusinessCardHolderForm.resx">

@@ -61,8 +61,12 @@ namespace BusinessCardHolder.DataBase
         public IEnumerable<Company> Search(string name, string nip, string address, string city, string postCode, string phoneNumber)
         {
             List<Company> companies = businessCardHolderContext.Companies.Where(c => 
-                c.Name.Contains(name) && c.Nip.Contains(nip) && c.Address.Contains(address) && c.City.Contains(c.City) && 
-                c.PostCode.Contains(postCode) && c.PhoneNumber.Contains(phoneNumber))
+                c.Name.Contains(name) && 
+                c.Nip.Contains(nip) && 
+                c.Address.Contains(address) && 
+                c.City.Contains(city) && 
+                c.PostCode.Contains(postCode) && 
+                c.PhoneNumber.Contains(phoneNumber))
                 .ToList();
             return companies;
         }

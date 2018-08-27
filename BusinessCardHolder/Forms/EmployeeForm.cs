@@ -9,6 +9,7 @@ namespace BusinessCardHolder.Forms
     {
         public Employee Employee { get; set; }
         public Button SaveButton { get { return btnSaveButton; } }
+        public Button CancelChangesButton { get { return btnCancelButton; } }
         public ComboBox CompanyComboBox {  get { return cmbCompanyName; } }
 
         public EmployeeForm(Employee employee, Company company = null)
@@ -30,7 +31,6 @@ namespace BusinessCardHolder.Forms
         {
             Employee = (Employee)bsEmployee.Current;
             Employee.CompanyId = Convert.ToInt32(cmbCompanyName.SelectedValue);
-            Close();
         }
 
         private void btnCancelButton_Click(object sender, EventArgs e)
