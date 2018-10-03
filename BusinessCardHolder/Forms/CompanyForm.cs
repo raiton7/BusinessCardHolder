@@ -40,11 +40,19 @@ namespace BusinessCardHolder.Forms
             frmEmployeeForm.SaveButton.Click += delegate
             {
                 employee = frmEmployeeForm.Employee;
+                string errorText = string.Empty;
                 EmployeeRepository employeeRepository = new EmployeeRepository();
-                employeeRepository.Add(employee);
+                if (Validation.ValidateEmployee(employee, ref errorText))
+                {
+                    employeeRepository.Add(employee);
+                    frmEmployeeForm.Close();
+                }
+                else
+                {
+                    ShowErrorMessage(errorText);
+                }
                 bsEmployees.DataSource = employeeRepository.FindByCompanyId(Company.Id);
                 grdEmployees.DataSource = bsEmployees;
-                bsEmployees.ResetBindings(false);
                 grdEmployees.Refresh();
             };
         }
@@ -62,17 +70,26 @@ namespace BusinessCardHolder.Forms
             {
                 employee = frmEmployeeForm.Employee;
                 EmployeeRepository employeeRepository = new EmployeeRepository();
-                employeeRepository.Update(employee);
+                string errorText = string.Empty;
+                if (Validation.ValidateEmployee(employee, ref errorText))
+                {
+                    employeeRepository.Update(employee);
+                    frmEmployeeForm.Close();
+                }
+                else
+                {
+                    ShowErrorMessage(errorText);
+                }
                 bsEmployees.DataSource = employeeRepository.FindByCompanyId(Company.Id);
                 grdEmployees.DataSource = bsEmployees;
-                bsEmployees.ResetBindings(false);
                 grdEmployees.Refresh();
             };
             frmEmployeeForm.CancelChangesButton.Click += delegate
             {
                 EmployeeRepository employeeRepository = new EmployeeRepository();
                 bsEmployees.DataSource = employeeRepository.FindByCompanyId(Company.Id);
-                bsEmployees.ResetBindings(false);
+                grdEmployees.DataSource = bsEmployees;
+                grdEmployees.Refresh();
             };
         }
 
@@ -86,7 +103,8 @@ namespace BusinessCardHolder.Forms
                     EmployeeRepository employeeRepository = new EmployeeRepository();
                     employeeRepository.DeleteById(((Employee)bsEmployees.Current).Id);
                     bsEmployees.DataSource = employeeRepository.FindByCompanyId(Company.Id);
-                    bsEmployees.ResetBindings(false);
+                    grdEmployees.DataSource = bsEmployees;
+                    grdEmployees.Refresh();
                 }
             }
         }
@@ -99,6 +117,43 @@ namespace BusinessCardHolder.Forms
         private void btnCancelButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void ShowErrorMessage(string errorText)
+        {
+            switch (errorText)
+            {
+                case "firstName":
+                    {
+                        MessageBox.Show("Błędne imię", "Błąd", MessageBoxButtons.OK);
+                        break;
+                    }
+                case "lastName":
+                    {
+                        MessageBox.Show("Błędne nazwisko", "Błąd", MessageBoxButtons.OK);
+                        break;
+                    }
+                case "jobTitle":
+                    {
+                        MessageBox.Show("Błędna nazwa stanowiska", "Błąd", MessageBoxButtons.OK);
+                        break;
+                    }
+                case "phone":
+                    {
+                        MessageBox.Show("Błędny numer telefonu", "Błąd", MessageBoxButtons.OK);
+                        break;
+                    }
+                case "mobile":
+                    {
+                        MessageBox.Show("Błędny numer komórkowy", "Błąd", MessageBoxButtons.OK);
+                        break;
+                    }
+                default:
+                    {
+                        MessageBox.Show("Nieznany błąd", "Błąd", MessageBoxButtons.OK);
+                        break;
+                    }
+            }
         }
     }
 }

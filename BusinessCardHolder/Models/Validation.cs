@@ -6,12 +6,12 @@ namespace BusinessCardHolder.Models
     {
         static public bool ValidateCompany(Company company, ref string errorText)
         {
-            string nameRegex = @"([a-zA-Z'\s]+)([\w]*)([0-9]*)$";
-            string nipAndPhoneNumberRegex = @"^([0-9]*)$";
-            string nipRegex = @"[0-9]{3}[-]*[0-9]{2}[-]*[0-9]{2}[-]*[0-9]{3}$";
-            string addressRegex = @"([a-zA-Z'\s]*)+([\w]*)+([0-9]*)$";
-            string cityRegex = @"([a-zA-ZZĄĆĘÓŚŃŻŹąćęńóśżź]+[?:[\s-]a-zA-ZZĄĆĘÓŚŃŻŹąćęńóśżź]+)*$";
-            string postCodeRegex = @"^[0-9][0-9][-][0-9][0-9][0-9]$";
+            string nameRegex = @"([a-zA-Z\s]+)([\/\.\,\-]*)([0-9]*)$";
+            string phoneNumberRegex = @"^([0-9]*)$";
+            string nipRegex = @"[0-9]{3}[-]?[0-9]{2}[-]?[0-9]{2}[-]?[0-9]{3}$";
+            string addressRegex = @"^([a-zA-ZĄĆĘŁÓŚŃŻŹąćęłńóśżź]+)([\s][0-9]+([\/][0-9])?)$";
+            string cityRegex = @"([a-zA-ZĄĆĘŁÓŚŃŻŹąćęłńóśżź]+[?:[\s\-]a-zA-ZĄĆĘŁÓŚŃŻŹąćęłńóśżź]+)*$";
+            string postCodeRegex = @"^[0-9]{2}[-][0-9]{3}$";
             if (string.IsNullOrEmpty(company.Name) || (!Regex.Match(company.Name, nameRegex).Success) ||
                 company.Name.Length > 500)
             {
@@ -41,7 +41,7 @@ namespace BusinessCardHolder.Models
                 errorText = "postCode";
                 return false;
             }
-            if (string.IsNullOrEmpty(company.PhoneNumber) || (!Regex.Match(company.PhoneNumber, nipAndPhoneNumberRegex).Success) ||
+            if (string.IsNullOrEmpty(company.PhoneNumber) || (!Regex.Match(company.PhoneNumber, phoneNumberRegex).Success) ||
                 company.PhoneNumber.Length > 16)
             {
                 errorText = "phone";
@@ -53,21 +53,22 @@ namespace BusinessCardHolder.Models
 
         static public bool ValidateEmployee(Employee employee, ref string errorText)
         {
-            string firstNameLastNameJobTitleRegex = @"[A-Z]+([a-z]*)$";
+            string firstName = @"[A-ZĄĆĘŁÓŚŃŻŹ]([a-ząćęłńóśżź]*)$";
+            string lastNameAndJobTitleRegex = @"^[A-ZĄĆĘŁÓŚŃŻŹ]([a-ząćęłńóśżź]*)([\s\-][a-zA-ZĄĆĘŁÓŚŃŻŹąćęłńóśżź]*)*$";
             string phoneNumbersRegex = @"^([0-9]*)$";
-            if (string.IsNullOrEmpty(employee.FirstName) || (!Regex.Match(employee.FirstName, firstNameLastNameJobTitleRegex).Success) ||
+            if (string.IsNullOrEmpty(employee.FirstName) || (!Regex.Match(employee.FirstName, firstName).Success) ||
                 employee.FirstName.Length > 100)
             {
                 errorText = "firstName";
                 return false;
             }
-            if (string.IsNullOrEmpty(employee.LastName) || (!Regex.Match(employee.LastName, firstNameLastNameJobTitleRegex).Success) ||
+            if (string.IsNullOrEmpty(employee.LastName) || (!Regex.Match(employee.LastName, lastNameAndJobTitleRegex).Success) ||
                 employee.LastName.Length > 100)
             {
                 errorText = "lastName";
                 return false;
             }
-            if (string.IsNullOrEmpty(employee.JobTitle) || (!Regex.Match(employee.JobTitle, firstNameLastNameJobTitleRegex).Success) ||
+            if (string.IsNullOrEmpty(employee.JobTitle) || (!Regex.Match(employee.JobTitle, lastNameAndJobTitleRegex).Success) ||
                 employee.JobTitle.Length > 200)
             {
                 errorText = "jobTitle";

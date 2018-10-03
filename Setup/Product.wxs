@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="BusinessCardHolder Setup" Language="1033" Version="1.0.0.0" Manufacturer="Me" UpgradeCode="b3be24b3-cd10-4fab-8c85-e8ba7a848a7e">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <Media Id="1" Cabinet="cab1.cab" EmbedCab="no"/>
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+		<Feature Id="ProductFeature" Title="Setup" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="Business Card Holder" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="BusinessCardHolder.exe" Guid="*">
+        <File Id="BusinessCardHolder.exe" Source="C:\Users\developer\source\repos\BusinessCardHolder\BusinessCardHolder\bin\Release\BusinessCardHolder.exe" KeyPath="yes" Checksum="yes"/>
+      </Component>
+      <Component Id="ef.dll" Guid="*">
+        <File Id="ef.dll" Source="C:\Users\developer\source\repos\BusinessCardHolder\BusinessCardHolder\bin\Release\EntityFramework.dll" KeyPath="yes"/>
+      </Component>
+      <Component Id="ef.sql.xml" Guid="*">
+        <File Id="ef.sql.xml" Source="C:\Users\developer\source\repos\BusinessCardHolder\BusinessCardHolder\bin\Release\EntityFramework.SqlServer.xml" KeyPath="yes"/>
+      </Component>
+      <Component Id="ef.sql.dll" Guid="*">
+        <File Id="ef.sql.dll" Source="C:\Users\developer\source\repos\BusinessCardHolder\BusinessCardHolder\bin\Release\EntityFramework.SqlServer.dll" KeyPath="yes"/>
+      </Component>
+      <Component Id="ef.xml" Guid="*">
+        <File Id="ef.xml" Source="C:\Users\developer\source\repos\BusinessCardHolder\BusinessCardHolder\bin\Release\EntityFramework.xml"/>
+      </Component>
+      <Component Id="app.config" Guid="*">
+        <File Id="app.config" Source="C:\Users\developer\source\repos\BusinessCardHolder\BusinessCardHolder\bin\Release\BusinessCardHolder.exe.config" KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <Feature Id="MainApplication" Title="Business Card Holder" Level="1">
+      <ComponentRef Id="BusinessCardHolder.exe"/>
+      <ComponentRef Id="ef.dll"/>
+      <ComponentRef Id="ef.sql.xml"/>
+      <ComponentRef Id="ef.sql.dll"/>
+      <ComponentRef Id="ef.xml"/>
+      <ComponentRef Id="app.config"/>
+    </Feature>
+  </Fragment>
+</Wix>

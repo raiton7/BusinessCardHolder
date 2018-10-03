@@ -381,17 +381,20 @@
             // 
             // clmId
             // 
-            this.clmId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.clmId.DataPropertyName = "Id";
+            this.clmId.FillWeight = 123.0984F;
             this.clmId.HeaderText = "ID";
             this.clmId.MinimumWidth = 2;
             this.clmId.Name = "clmId";
             this.clmId.ReadOnly = true;
+            this.clmId.Width = 50;
             // 
             // clmCompanyName
             // 
             this.clmCompanyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmCompanyName.DataPropertyName = "Name";
+            this.clmCompanyName.FillWeight = 81.39567F;
             this.clmCompanyName.HeaderText = "Nazwa";
             this.clmCompanyName.MinimumWidth = 2;
             this.clmCompanyName.Name = "clmCompanyName";
@@ -399,17 +402,20 @@
             // 
             // clmNip
             // 
-            this.clmNip.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmNip.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.clmNip.DataPropertyName = "Nip";
+            this.clmNip.FillWeight = 81.39567F;
             this.clmNip.HeaderText = "NIP";
             this.clmNip.MinimumWidth = 2;
             this.clmNip.Name = "clmNip";
             this.clmNip.ReadOnly = true;
+            this.clmNip.Width = 90;
             // 
             // clmAddress
             // 
             this.clmAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmAddress.DataPropertyName = "Address";
+            this.clmAddress.FillWeight = 81.39567F;
             this.clmAddress.HeaderText = "Adres";
             this.clmAddress.MinimumWidth = 2;
             this.clmAddress.Name = "clmAddress";
@@ -419,6 +425,7 @@
             // 
             this.clmCity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmCity.DataPropertyName = "City";
+            this.clmCity.FillWeight = 81.39567F;
             this.clmCity.HeaderText = "Miasto";
             this.clmCity.MinimumWidth = 2;
             this.clmCity.Name = "clmCity";
@@ -428,6 +435,7 @@
             // 
             this.clmPostCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmPostCode.DataPropertyName = "PostCode";
+            this.clmPostCode.FillWeight = 81.39567F;
             this.clmPostCode.HeaderText = "Kod Pocztowy";
             this.clmPostCode.MinimumWidth = 2;
             this.clmPostCode.Name = "clmPostCode";
@@ -437,6 +445,7 @@
             // 
             this.clmPhoneNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmPhoneNumber.DataPropertyName = "PhoneNumber";
+            this.clmPhoneNumber.FillWeight = 81.39567F;
             this.clmPhoneNumber.HeaderText = "Telefon";
             this.clmPhoneNumber.MinimumWidth = 2;
             this.clmPhoneNumber.Name = "clmPhoneNumber";
@@ -446,6 +455,7 @@
             // 
             this.clmNotes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmNotes.DataPropertyName = "Notes";
+            this.clmNotes.FillWeight = 81.39567F;
             this.clmNotes.HeaderText = "Uwagi";
             this.clmNotes.MinimumWidth = 2;
             this.clmNotes.Name = "clmNotes";
